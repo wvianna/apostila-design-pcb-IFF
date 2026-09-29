@@ -1,0 +1,113 @@
+% =====================================================================
+%  Apostila: Design de PCB com uso do KiCad
+%  Documento consolidado gerado a partir de apostila/*.md
+%
+%  Build:  ./build-pdf.sh      (ou: pdflatex -output-directory=build apostila.tex)
+%  Não editar build/*.tex — são gerados por build-tex.py.
+% =====================================================================
+\documentclass[12pt,a4paper,oneside]{report}
+
+% --- idioma e codificação ---------------------------------------------
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[brazilian]{babel}
+\usepackage{lmodern}
+\usepackage{textcomp}
+\usepackage{amssymb}
+
+% --- página ------------------------------------------------------------
+\usepackage[a4paper,margin=2.5cm,top=3cm,bottom=3cm]{geometry}
+\usepackage{indentfirst}
+\usepackage{microtype}
+\usepackage{fancyhdr}
+\usepackage{emptypage}
+
+% --- figuras -----------------------------------------------------------
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+\usepackage{float}
+\graphicspath{{../apostila/}}
+\floatplacement{figure}{H}
+
+% --- tabelas -----------------------------------------------------------
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{calc}
+
+% --- links -------------------------------------------------------------
+\usepackage{xurl}
+\usepackage[hidelinks,breaklinks]{hyperref}
+
+% --- legendas ----------------------------------------------------------
+% O material já traz o número na própria legenda ("Figura N: ..."), e a
+% numeração não é sequencial por capítulo. Por isso o contador do LaTeX
+% não é impresso: evita "Figura 2.3: Figura 20: ...".
+\usepackage{caption}
+\captionsetup{labelformat=empty,labelsep=none,font=small,
+              justification=centering,skip=6pt}
+
+% --- quadros de destaque (ver latex/quadros.lua) -----------------------
+\usepackage[most]{tcolorbox}
+\newtcolorbox{quadro}[2]{
+  breakable, enhanced,
+  colback=white, colframe=#1,
+  boxrule=0.8pt, arc=2pt,
+  left=8pt, right=8pt, top=6pt, bottom=6pt,
+  colbacktitle=#1, coltitle=white,
+  fonttitle=\bfseries\small, title={#2},
+}
+
+% --- caracteres que o inputenc não cobre -------------------------------
+% Latin-1 (º ± ² © × – — “ ” ’ •) já vem do inputenc + textcomp.
+\DeclareUnicodeCharacter{2126}{\textohm}
+\DeclareUnicodeCharacter{2192}{\ensuremath{\rightarrow}}
+\DeclareUnicodeCharacter{2265}{\ensuremath{\geq}}
+\DeclareUnicodeCharacter{2267}{\ensuremath{\geqq}}
+\DeclareUnicodeCharacter{03BC}{\textmu}
+\DeclareUnicodeCharacter{03A6}{\ensuremath{\Phi}}
+\DeclareUnicodeCharacter{2460}{\textcircled{\scriptsize 1}}
+\DeclareUnicodeCharacter{2461}{\textcircled{\scriptsize 2}}
+\DeclareUnicodeCharacter{2462}{\textcircled{\scriptsize 3}}
+\DeclareUnicodeCharacter{2463}{\textcircled{\scriptsize 4}}
+\DeclareUnicodeCharacter{2464}{\textcircled{\scriptsize 5}}
+\DeclareUnicodeCharacter{2465}{\textcircled{\scriptsize 6}}
+
+% --- aproveitamento de linha ------------------------------------------
+\setlength{\emergencystretch}{3em}
+\renewcommand{\arraystretch}{1.15}
+\setcounter{secnumdepth}{2}
+\setcounter{tocdepth}{2}
+
+% --- cabeçalho ---------------------------------------------------------
+\pagestyle{fancy}
+\setlength{\headheight}{14pt}
+\fancyhf{}
+\fancyhead[L]{\small\nouppercase{\leftmark}}
+\fancyhead[R]{\small\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\fancypagestyle{plain}{\fancyhf{}\fancyhead[R]{\small\thepage}%
+  \renewcommand{\headrulewidth}{0pt}}
+
+% exigido pelo pandoc
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+\begin{document}
+
+\input{build/capa}
+
+\pagenumbering{roman}
+\tableofcontents
+
+\clearpage
+\chapter*{Índice de figuras}
+\addcontentsline{toc}{chapter}{Índice de figuras}
+\markboth{Índice de figuras}{}
+\input{build/indice-figuras}
+
+\clearpage
+\pagenumbering{arabic}
+\input{build/corpo}
+
+\end{document}
