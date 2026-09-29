@@ -33,11 +33,11 @@ Não há dependência de software proprietário para recompilar o documento.
 
 | Métrica | Valor |
 |---|---|
-| Páginas do PDF final | 106 |
-| Capítulos numerados | 10 (+ Referências WEB sem número) |
-| Linhas de texto-fonte (`apostila/[0-9]*.md`) | 1 402 |
+| Páginas do PDF final | 107 |
+| Capítulos numerados | 10 (+ Apresentação e Referências WEB sem número) |
+| Linhas de texto-fonte (`apostila/[0-9]*.md`) | 1 400 |
 | Figuras extraídas e catalogadas | 83 |
-| Quadros de destaque | 8 |
+| Quadros de destaque | 9 |
 | Erros de compilação LaTeX | 0 |
 | Avisos *Overfull* | 0 |
 
@@ -60,9 +60,10 @@ Não há dependência de software proprietário para recompilar o documento.
 | — | [`99-referencias-web.md`](apostila/99-referencias-web.md) | Referências WEB | — |
 
 **Índice** — [`apostila/indice.md`](apostila/indice.md) (capa: título, autores,
-instituição, data) e [`apostila/indice-figuras.md`](apostila/indice-figuras.md)
-(manifesto das figuras com o número, a página de origem no PDF, o arquivo e a
-legenda).
+instituição, data, e a seção `## Apresentação`, que o pipeline converte em
+`build/apresentacao.tex`) e
+[`apostila/indice-figuras.md`](apostila/indice-figuras.md) (manifesto das figuras
+com o número, a página de origem no PDF, o arquivo e a legenda).
 
 ---
 
@@ -192,8 +193,9 @@ edite `latex/build/*` (é gerado) nem o PDF.
 >    scripts relatam sucesso, o build passa com 0 erros e 0 *Overfull*, mas o
 >    conteúdo novo não está no PDF. Só o arquivo aberto no editor é afetado.
 > 2. **`apostila/build-md.py` é migração de uso único e é destrutivo.** Ele
->    **sobrescreve todos** os `apostila/*.md` a partir do PDF convertido. Rodá-lo
->    de novo apaga as correções editoriais feitas à mão.
+>    **sobrescreve todos** os `apostila/*.md` a partir do PDF convertido — inclusive
+>    `indice.md`, o que leva junto a capa e a seção `## Apresentação`. Rodá-lo de
+>    novo apaga as correções editoriais feitas à mão.
 > 3. **Ao corrigir um trecho tratado por um script, edite a lista de dados do
 >    script e reexecute-o** (todos são idempotentes) em vez de editar o
 >    resultado — a próxima execução desfaria a edição manual.
@@ -292,7 +294,7 @@ reexecutar.
 
 | Script | Papel | Efeito |
 |---|---|---|
-| [`build-md.py`](apostila/build-md.py) | migração inicial | **DESTRUTIVO** — sobrescreve todos os `apostila/*.md` |
+| [`build-md.py`](apostila/build-md.py) | migração inicial | **DESTRUTIVO** — sobrescreve todos os `apostila/*.md`; converte `**N.. PASSO**` em `**Nº PASSO**` e descarta o `**o**` órfão que o conversor extrai do ordinal |
 | [`extrair-figuras.py`](apostila/extrair-figuras.py) | extração | recorta as 83 figuras do PDF (`mutool trace` + `pdftotext -bbox` + `pdftoppm` + Pillow) |
 | [`corrigir-legendas.py`](apostila/corrigir-legendas.py) | correção | legendas das Figs. 1 e 2, resíduo das URLs de origem, legendas duplicadas no cap. 9 e o índice de figuras |
 | [`inserir-secao-ipc.py`](apostila/inserir-secao-ipc.py) | conteúdo | cria/atualiza a seção §2.3 (Normas IPC) |
@@ -366,23 +368,27 @@ declarar concluído com evidência.
 
 ## Limitações conhecidas e pendências
 
-Pendências herdadas da conversão e da revisão, registradas e detalhadas em
-[`docs/auditoria-apostila-pcb.md`](docs/auditoria-apostila-pcb.md):
+As correções desta rodada — A-02, A-03, A-04, A-06, A-09, A-10, A-12, A-13, A-18
+e o crédito das Figs. 1 e 2 — estão registradas com evidência em
+[`docs/auditoria-apostila-pcb.md`](docs/auditoria-apostila-pcb.md).
 
-- **A-04** — no §7.7 (cap. 7), os cabeçalhos de tabela ("Tecla de", "Descrição",
-  "Atalho") aparecem como subtítulos sem número; é preciso reconstruir as tabelas
-  de atalho a partir do original. *É o defeito estrutural mais visível que resta.*
-- **A-02 / A-03 / A-12** — correções mecânicas: marcador `•` solto fora de lista,
-  termos em inglês sem tradução, artefatos de conversão no cap. 9.
-- **A-09** — duas URLs quebradas e resíduos de `<u>` em `99-referencias-web.md`.
-- **A-13** — não há seção "Apresentação" em `apostila/indice.md`.
-- **A-06 / A-10** — afirmação sobre tolerância de USB a verificar; uma figura do
-  cap. 9 está oculta no PDF de origem.
-- **Crédito das Figs. 1 e 2** — a legenda original era a própria URL de origem;
-  ao trocá-la por uma legenda editorial, o crédito ficou ausente e precisa ser
-  reposto na seção de referências.
-- **Cap. 9** — conferência linha a linha contra `livros/Controlled Impedance
-  Design Guide_October 2022.pdf` ainda não concluída.
+Pendências que continuam abertas:
+
+- **A-07** (cap. 6) — a lista de ferramentas EDA ainda cita "Eagle" e "Mentor
+  Graphics PADS". As duas informações já foram verificadas e o texto precisa ser
+  reescrito, com alternativas atuais.
+- **A-08** — cerca de metade dos links das Referências WEB é blog ou vídeo, não
+  fonte técnica primária. Os guias de fabricante usados no cap. 9 já foram
+  acrescentados.
+- **Galeria do cap. 8** — os títulos dos projetos foram linearizados dentro do
+  parágrafo de descrição da figura. Padronizar exige decisão editorial.
+- **§7.8 — confirmação do autor**: a tabela de capacidades foi transcrita da
+  página da JLCPCB, não recuperada do PDF de origem, e os valores do fabricante
+  mudam com o tempo.
+- **`apostila/build-md.py` sobrescreve tudo** — a migração é de uso único. Rodá-la
+  de novo apaga todas as correções editoriais feitas à mão nos `apostila/*.md`.
+- **Sem revisão externa** — o PDF compila e está estruturalmente correto, o que
+  não equivale a conteúdo revisado por terceiros.
 
 ---
 

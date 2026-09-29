@@ -36,20 +36,20 @@ dependem de impedância consistente para evitar falhas.
 2. Ruído e Interferências: Reflexões nos sinais podem gerar interferência eletromagnética (EMI).
 3. Falhas no Circuito: Sistemas RF podem perder potência ou sofrer desajustes na frequência de operação.
 4. Desempenho Degradado: Em circuitos de alta velocidade, sinais com alta distorção podem prejudicar a eficiência do sistema.
-## 9.4. Controle de impedância com Kicad
+
+## 9.4. Controle de impedância com KiCad
 
 A USB será utilizada como exemplo para o entendimento de como realizar o controle de impedância.
 
 ::: {.quadro tipo="importante" titulo="Impedância do par diferencial USB"}
-O **USB 2.0** exige **90 Ω ±15%** no par diferencial. O valor de **±10%** que aparece em calculadoras de fabricante é a *tolerância de fabricação* da impedância controlada — a JLCPCB, por exemplo, declara ±10% — e não o requisito da interface. Ao criar a classe de rede no KiCAD, use o valor e a tolerância da interface que está sendo roteada.
+O **USB 2.0** exige **90 Ω ±15%** no par diferencial. O **±10%** que aparece nas calculadoras e nas páginas dos fabricantes **não** é o requisito da interface: é a *tolerância de fabricação* da impedância controlada. O guia da Sierra Circuits registra ±10% como tolerância padrão e ±5% como opção mais apertada; a JLCPCB adota os mesmos valores. Ao criar a classe de rede no KiCAD, use o valor da interface que está sendo roteada e confirme a tolerância com o fabricante.
 
-*Fontes: Texas Instruments, "USB layout basics"; JLCPCB, "PCB Manufacturing & Assembly Capabilities" (consultado em 2026-09-29).*
+*Fontes: Texas Instruments, "USB layout basics" (90 Ω ±15%); Sierra Circuits, "Controlled Impedance Design Guide", out./2022, §1.5 (±10% padrão, ±5% apertada — em `livros/`); JLCPCB, "PCB Manufacturing & Assembly Capabilities" (consultado em 2026-09-29).*
 :::
 
-**1.. PASSO** Previamente, no editor do esquemático, é necessário identificar com Label as
-trilhas que terão controle de impedância. Observe os dois exemplos das figuras onde as trilhas são identificadas com USB_D+ e USB_D- e no segundo exemplo classe DP_90R com rótulos pertencentes DP e DN. Os Label’s do par diferencial devem fazer parte de uma classe de rede que terão o controle de impedância. No KiCAD a identificação dos rótulos dias vias diferenciais deve ser finalizadas com +/- ou P/N.
+**1º PASSO** Previamente, no editor do esquemático, é necessário identificar com rótulos (*labels*) as trilhas que terão controle de impedância. Observe os dois exemplos das figuras: no primeiro, as trilhas são identificadas com USB_D+ e USB_D-; no segundo, com a classe DP_90R e os rótulos DP e DN. Os rótulos do par diferencial devem fazer parte de uma classe de rede que terá o controle de impedância. No KiCAD, a identificação dos rótulos das vias diferenciais deve ser finalizada com **+/-** ou **P/N**.
 
-Na USB geralmente são empregados diodos de proteção. O LESD5D5.0 é um diodo de proteção de rápidas resposta capaz de realizar o proteção contra EDS (Electrostatic Discharge Sensitivity) e transientes de tensão.
+Na USB geralmente são empregados diodos de proteção. O LESD5D5.0 é um diodo de proteção de resposta rápida, capaz de proteger contra ESD (*Electrostatic Discharge* — descarga eletrostática) e transientes de tensão.
 
 ![Figura 60: Label nas trilhas de comunicação USB com diodos de proteção](figuras/figura-60.png)
 
@@ -65,11 +65,9 @@ Na USB geralmente são empregados diodos de proteção. O LESD5D5.0 é um diodo 
 
 *Figura 62: Label nas trilhas de comunicação USB sem diodos de proteção*
 
-controle de impedância. O caso apresentado trata da JLCPCB.
+**2º PASSO** Após definir o fabricante de sua escolha, acesse as informações relativas ao controle de impedância. O caso apresentado trata da JLCPCB.
 
-#### Acesse <u>[https://jlcpcb.com/pt/impedance](https://jlcpcb.com/pt/impedance)</u>
-
-e verifique os parâmetros para multicamada. Os dados contidos nessa página serão importantes para uso posterior. A figura a seguir apresenta os parâmetros para PCB multicamada.
+Acesse [https://jlcpcb.com/pt/impedance](https://jlcpcb.com/pt/impedance) e verifique os parâmetros para multicamada. Os dados contidos nessa página serão importantes para uso posterior. A figura a seguir apresenta os parâmetros para PCB multicamada.
 
 ![Figura 63: Estrutura com parâmetros para o controle de impedância](figuras/figura-63.png)
 
@@ -89,7 +87,7 @@ Pode-se também realizar o acesso pelo link contido na página de compatibilidad
 
 *Figura 65: Página de compatibilidades da JLCPCB. Link para guia e calculadora de impedância*
 
-#### Troque a unidade para mm.
+**3º PASSO** Use a calculadora de impedância para definir os parâmetros do par diferencial. A calculadora da JLCPCB está em [https://jlcpcb.com/pcb-impedance-calculator](https://jlcpcb.com/pcb-impedance-calculator); a da Sierra Circuits, em [https://www.protoexpress.com/tools/pcb-impedance-calculator/](https://www.protoexpress.com/tools/pcb-impedance-calculator/). Selecione **sem revestimento** (*uncoated*) e **par diferencial** e clique em **OPEN**. Em seguida, troque a unidade para milímetros.
 
 ![Figura 66: Trilhas não revestidas (uncoated) par diferencial](figuras/figura-66.png)
 
@@ -121,15 +119,12 @@ Insira o valor de 90 ohms para a impedância alvo. Outros tipos de barramento po
 *Figura 70: Calculadora de impedância da Sierra Circuits*
 
 
-Após selecionar a unidade para mm, preencher os parâmetros:
+Após selecionar a unidade para milímetros, preencha os parâmetros:
 
-#### Altura do dielétrico: 0,2104 mm
-
-Constante dielétrica para o material prepreg 7628: 4,4
-
-#### Separação entre trilhas: 0,2 mm
-
-#### Impedância alvo: 90 ohms
+- **Altura do dielétrico:** 0,2104 mm;
+- **Constante dielétrica** do material prepreg 7628: 4,4;
+- **Separação entre trilhas** (*Trace Separation*, S): 0,2 mm;
+- **Impedância alvo:** 90 Ω.
 
 Clique em **Calcular W** e será obtido o valor da largura da trilha.
 
@@ -139,18 +134,27 @@ Insira o valor calculado da trilha na classe DP_90R conforme a figura.
 
 *Figura 71: Largura da trilha para a classe DP_90R*
 
+**4º PASSO** Realize o roteamento do par diferencial. Utilize a **tecla de atalho “6”**.
+
 ![Figura 72: Roteamento do par diferencial](figuras/figura-72.png)
 
 *Figura 72: Roteamento do par diferencial*
 
 
-Devido a geometria das trilhas do par diferencial, mas mesmas não possuem o mesmo comprimento. Logo, será necessário realizar alguns ajustes para garantir que os sinais elétricos sejam recebidos no mesmo tempo.
+Devido à geometria das trilhas do par diferencial, as duas não possuem o mesmo comprimento. Logo, será necessário realizar alguns ajustes para garantir que os sinais elétricos sejam recebidos no mesmo instante.
 
-Se houver uma diferença de comprimento (ou atraso), chamada de **skew**, isso pode causar:
+Se houver uma diferença de comprimento (ou de atraso), chamada de **skew**, isso pode causar:
 
-- Jitter (variação temporal) no sinal.
-- Degradação da imunidade a ruído (o modo comum não é cancelado corretamente).
-- Erros de comunicação em altas frequências. Verifique o comprimento de cada trilha, para isso use **a tecla de atalho “7”.**
+- *Jitter* (variação temporal) no sinal;
+- degradação da imunidade a ruído — o modo comum deixa de ser cancelado corretamente;
+- erros de comunicação em altas frequências.
+
+A correção é acrescentar *serpentinas* na trilha mais curta, o mais próximo possível do ponto onde a diferença começou (uma via, uma curva ou um conector). Uma serpentina colocada longe desse ponto iguala o comprimento total, mas não corrige o trecho em que os sinais estavam desalinhados. Como a velocidade de propagação muda de uma camada para outra, mantenha as duas trilhas do par na mesma camada sempre que houver casamento de comprimento a fazer.
+
+*Fonte: Sierra Circuits, "Controlled Impedance Design Guide", out./2022, §3.5.5 (Length matching) — em `livros/`.*
+
+Verifique o comprimento de cada trilha; para isso, use a **tecla de atalho “7”**.
+
 ![Figura 73: Comprimento da trilha do par diferencial](figuras/figura-73.png)
 
 *Figura 73: Comprimento da trilha do par diferencial*
@@ -160,17 +164,16 @@ Se houver uma diferença de comprimento (ou atraso), chamada de **skew**, isso p
 
 *Figura 74: Comprimento da trilha do par diferencial*
 
- Conforme as figuras anteriores, pode-se observar que as trilhas possuem
-comprimentos de 31,45 mm e 29,9588 mm. Deve-se preceder com os ajuste de comprimento para equalização.
+Conforme as figuras anteriores, pode-se observar que as trilhas possuem comprimentos de 31,45 mm e 29,9588 mm. Deve-se proceder aos ajustes de comprimento para equalização.
 
-Use a **tecla de atalho “8”**, para clique com o botão direito do mouse na maior trilha e selecione ***Configurações do ajuste de comprimento***. Observe a figura a seguir.
+Use a **tecla de atalho “8”** e clique com o botão direito do mouse na maior trilha; em seguida, selecione **Configurações do ajuste de comprimento**. Observe a figura a seguir.
 
 ![Figura 75: Ajuste do comprimento desejado](figuras/figura-75.png)
 
 *Figura 75: Ajuste do comprimento desejado*
 
 
-Defina o comprimento alvo igual o comprimento da maior trilha ou pouco superior, no exemplo o valor é de 33 mm.
+Defina o comprimento alvo igual ao comprimento da maior trilha ou pouco superior; no exemplo, o valor é de 33 mm.
 
 ![Figura 76: Maior trilha com comprimento 33](figuras/figura-76.png)
 
@@ -184,7 +187,7 @@ A tecla de atalho 7 deverá ser usada para o ajuste de comprimento da outra tril
 *Figura 77: Ajuste de comprimento da trilha*
 
 
-A figura a seguir apresenta resultado final cujo comprimento de cada trilha é de 33mm.
+A figura a seguir apresenta o resultado final, cujo comprimento de cada trilha é de 33 mm.
 
 ![Figura 78: Trilhas par diferencial com comprimentos iguais e impedância ajustada](figuras/figura-78.png)
 

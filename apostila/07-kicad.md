@@ -4,7 +4,7 @@ O KiCad é um conjunto de softwares de código aberto voltado para a criação d
 
 O KiCad é uma ferramenta muito popular entre engenheiros eletrônicos, entusiastas e estudantes, oferecendo uma solução completa e gratuita para projetos eletrônicos. Ele é multiplataforma, o que significa que está disponível para Windows, macOS e Linux.
 
-#### As principais funcionalidades do KiCad incluem:
+As principais funcionalidades do KiCad incluem:
 
 - **Editor esquemático:** Permite criar esquemas eletrônicos, onde os componentes são conectados para formar um circuito funcional;
 - **Editor de PCB:** Uma vez que o esquema esteja pronto, o KiCad permite projetar a PCB, posicionando os componentes e traçando as trilhas de cobre para conectar os componentes adequadamente;
@@ -152,7 +152,7 @@ Abaixo estão as principais etapas do workflow do KiCad:
 
 O KiCad possui várias bibliotecas de componentes, mas existem outras disponíveis online.
 
-#### As bibliotecas são:
+As bibliotecas são:
 
 - symbols → símbolos utilizados no editor de esquemático do KiCad
 - footprints → footprints utilizados no editor da PCB
@@ -310,25 +310,14 @@ Caso deseje incluir as bibliotecas apenas no projeto e dentro dos respectivos di
 
 Estas teclas funcionam em ambos os editores:
 
-#### Tecla de
-
-#### Descrição
-
-#### Atalho
-
-|Ctrl + S|Salvar o projeto.|
+|Tecla de Atalho|Descrição|
 |---|---|
+|Ctrl + S|Salvar o projeto.|
 |Ctrl + O|Abrir um projeto existente.|
 |Ctrl + N|Criar um novo projeto.|
 |Ctrl + P|Imprimir o projeto atual.|
-
-#### Tecla de
-
-#### Descrição
-
-#### Atalho
-
-**F11** Alternar para modo tela cheia. Acessar o menu de ajuda/documentação do **F1** KiCad.
+|F11|Alternar para modo tela cheia.|
+|F1|Acessar o menu de ajuda/documentação do KiCad.|
 
 Essas teclas de atalho são padrão no KiCad 8 e podem ser ajustadas em **Preferências > Configuração de Atalhos** caso você precise personalizá-las.
 

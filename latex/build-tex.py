@@ -164,6 +164,34 @@ def capa_tex():
     (BUILD / 'capa.tex').write_text(corpo, encoding='utf-8')
 
 
+def apresentacao_tex():
+    """Gera `build/apresentacao.tex` a partir do `## Apresentação` de `indice.md`.
+
+    É pré-textual: vem antes do sumário, em página própria, sem número de
+    capítulo. Só parágrafos — o texto é curto e não tem estrutura interna.
+    """
+    linhas = (APOSTILA / 'indice.md').read_text(encoding='utf-8').split('\n')
+    ini = next((i for i, l in enumerate(linhas)
+                if l.strip() == '## Apresentação'), None)
+    if ini is None:
+        sys.exit('apostila/indice.md: falta a seção "## Apresentação"')
+    paragrafos = []
+    for l in linhas[ini + 1:]:
+        if l.startswith('#'):
+            break
+        if l.strip():
+            paragrafos.append(l.strip())
+    if not paragrafos:
+        sys.exit('apostila/indice.md: seção "## Apresentação" vazia')
+    corpo = ['% Gerado por build-tex.py a partir de apostila/indice.md — não editar.',
+             '\\chapter*{Apresentação}',
+             '\\addcontentsline{toc}{chapter}{Apresentação}',
+             '\\markboth{Apresentação}{}',
+             '']
+    corpo += [com_urls(p) + '\n' for p in paragrafos]
+    (BUILD / 'apresentacao.tex').write_text('\n'.join(corpo), encoding='utf-8')
+
+
 def escapar_latex(t):
     for a, b in (('\\', r'\textbackslash{}'), ('&', r'\&'), ('%', r'\%'),
                  ('$', r'\$'), ('#', r'\#'), ('_', r'\_'),
@@ -230,6 +258,7 @@ def separar_blocos(ls):
 def main():
     BUILD.mkdir(parents=True, exist_ok=True)
     capa_tex()
+    apresentacao_tex()
     indice_figuras_tex()
 
     fontes = sorted(p for p in APOSTILA.glob('[0-9]*.md'))

@@ -41,13 +41,14 @@ Ao compreender os principais elementos das Placas de Circuito Impresso e suas fu
 
 ### 2.2.5. Acabamento de superfície
 
-Surface finish, ou Acabamento de Superfície, compõe uma interface crítica entre os componentes e o local onde serão posicionados para solda, também chamada de SMOBC (Solder Mask Over Bare Copper) – Máscara de solda sobre cobre exposto. Essa superfície, sem nenhum tratamento, ficaria com os pads de cobre expostos, o que resultaria em oxidação, deterioração e consequente perda de funcionalidade.
+O **acabamento de superfície** (*surface finish*) compõe uma interface crítica entre os componentes e o local onde serão posicionados para solda, também chamada de SMOBC (Solder Mask Over Bare Copper) – Máscara de solda sobre cobre exposto. Essa superfície, sem nenhum tratamento, ficaria com os pads de cobre expostos, o que resultaria em oxidação, deterioração e consequente perda de funcionalidade.
 
 O acabamento de superfície possui essencialmente duas funções:
 
 - Proteger o circuito de cobre exposto;
-- Prover uma superfície com maior solderabilidade, bem como reforçar o processo de montagem, promovendo uma junta de solda confiável com alto desempenho da PCB a longo prazo. O processo de acabamento superficial consiste em cobrir com metal o material
-orgânico os elementos de cobre não cobertos pela máscara de solda. Este processo protege o cobre e facilita a soldagem dos componentes seja pelo processo manual, forno ou outra técnica.
+- Prover uma superfície com maior soldabilidade, bem como reforçar o processo de montagem, promovendo uma junta de solda confiável com alto desempenho da PCB a longo prazo.
+
+O processo de acabamento superficial consiste em cobrir com metal ou material orgânico os elementos de cobre não cobertos pela máscara de solda. Este processo protege o cobre e facilita a soldagem dos componentes seja pelo processo manual, forno ou outra técnica.
 
 As técnicas mais comuns para realizar o acabamento superficial são:
 
@@ -111,13 +112,7 @@ As técnicas mais comuns para realizar o acabamento superficial são:
 *Figura 12: Electroless Nickel Immersion Gold) - B*
 
 
-•*Immersion Gold) - B*
-
-*Immersion Gold) - A*
-
-#### ENEPIG (Electroless Nickel Electroless
-
-#### Palladium Immersion Gold)
+- **ENEPIG (Electroless Nickel Electroless Palladium Immersion Gold)**
 
 ![Figura 13: Electroless Nickel Electroless Palladium Immersion Gold-A](figuras/figura-13.png)
 

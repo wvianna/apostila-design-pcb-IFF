@@ -169,7 +169,26 @@ def linearizar_tabelas_com_figuras(ls):
     return saida
 
 
+ORD_PASSO = re.compile(r'\*\*(\d)\.{1,2}\s*PASSO\*\*')
+
+
+def limpar_marcadores(ls):
+    """O conversor extrai o indicador ordinal de `1.º PASSO` como um `**o**`
+    solto e escreve o numero como `1..`. O `**o**` fica preso ao fim do
+    paragrafo anterior e o passo perde o titulo — foi assim que o bloco do
+    3.º passo do capitulo 9 sumiu na primeira migracao (achado A-12)."""
+    saida = []
+    for l in ls:
+        l = ORD_PASSO.sub(lambda m: f'**{m.group(1)}º PASSO**', l)
+        l = re.sub(r'\s*\*\*o\*\*\s*', ' ', l).rstrip()
+        if not l.strip() and saida and not saida[-1].strip():
+            continue
+        saida.append(l)
+    return saida
+
+
 def transformar(corpo):
+    corpo = limpar_marcadores(corpo)
     bs, nums = reordenar_pares(blocos(corpo))
     saida, pos = [], 0
     for (_n_orig, i, j), n in zip(bs, nums):

@@ -20,8 +20,8 @@ Saída: `apostila.pdf` (cópia de `build/apostila.pdf`).
 
 | Arquivo | Papel |
 |---|---|
-| `apostila.tex` | preâmbulo, capa, sumário, índice de figuras, `\input{build/corpo}` |
-| `build-tex.py` | consolida `apostila/*.md` → `build/corpo.tex` (normaliza + pandoc) |
+| `apostila.tex` | preâmbulo, capa, Apresentação, sumário, índice de figuras, `\input{build/corpo}` |
+| `build-tex.py` | consolida `apostila/*.md` → `build/corpo.tex` (normaliza + pandoc) e gera `build/capa.tex`, `build/apresentacao.tex` e `build/indice-figuras.tex` |
 | `build-pdf.sh` | executa o script acima e compila até estabilizar |
 | `build/` | gerados — não editar |
 
@@ -38,6 +38,9 @@ Saída: `apostila.pdf` (cópia de `build/apostila.pdf`).
 - **Figuras**: posicionadas com `[H]` (sem fila de floats) e limitadas a
   `max width=\linewidth`, `max height=0.82\textheight`.
 - **Referências WEB**: capítulo sem número, como no original.
+- **Apresentação**: página pré-textual gerada por `apresentacao_tex()` a partir da
+  seção `## Apresentação` de `../apostila/indice.md`. Entra antes do sumário, em
+  página própria, com `\chapter*` (sem número, sem `\leftmark`) e numeração romana.
 - **Cores dos títulos**: `xcolor` + `titlesec` definem quatro tons de azul, do mais
   escuro no capítulo ao mais claro na subsubseção — capítulo `#10305A`, seção
   `#1A4A85`, subseção `#2A63A8`, subsubseção `#3D7BC0`. O capítulo usa a forma
