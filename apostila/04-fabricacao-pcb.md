@@ -8,17 +8,15 @@ O processo começa com a criação de um padrão das trilhas condutoras a serem 
 
 ## 4.2. Utilização de foto-resistente e máscara fotográfica
 
-A placa de cobre revestida é então preparada com uma camada de foto- resistente, um material sensível à luz que reage quando exposto à radiação ultravioleta (UV). A máscara fotográfica é posicionada sobre a placa e, em seguida, a luz UV é aplicada. As áreas do foto-resistente expostas à luz UV endurecem, enquanto as áreas protegidas pela máscara permanecem inalteradas.
+A placa de cobre revestida é então preparada com uma camada de foto-resistente, um material sensível à luz que reage quando exposto à radiação ultravioleta (UV). A máscara fotográfica é posicionada sobre a placa e, em seguida, a luz UV é aplicada. As áreas do foto-resistente expostas à luz UV endurecem, enquanto as áreas protegidas pela máscara permanecem inalteradas.
 
 ## 4.3. Etapa de corrosão do cobre com cloreto férrico
 
-Após a exposição à luz UV, a placa é submersa em uma solução de cloreto férrico, um agente corrosivo que remove o cobre nas áreas não protegidas pelo foto- resistente endurecido. Dessa forma, apenas as trilhas desejadas permanecem na placa.
+Após a exposição à luz UV, a placa é submersa em uma solução de cloreto férrico, um agente corrosivo que remove o cobre nas áreas não protegidas pelo foto-resistente endurecido. Dessa forma, apenas as trilhas desejadas permanecem na placa.
 
 ## 4.4. Alternativas: Fresagem CNC e serigrafia com tintas resistentes à corrosão
 
-Além do processo fotográfico, existem outras técnicas para a criação do padrão de trilhas nas PCBs. A fresagem CNC (Controle Numérico Computadorizado) é uma opção que utiliza máquinas de precisão para cortar diretamente o cobre, formando as trilhas. A serigrafia com tintas resistentes à corrosão é outra alternativa, onde a
-
-tinta é aplicada diretamente sobre a placa de cobre, agindo como uma máscara protetora contra a corrosão.
+Além do processo fotográfico, existem outras técnicas para a criação do padrão de trilhas nas PCBs. A fresagem CNC (Controle Numérico Computadorizado) é uma opção que utiliza máquinas de precisão para cortar diretamente o cobre, formando as trilhas. A serigrafia com tintas resistentes à corrosão é outra alternativa, onde a tinta é aplicada diretamente sobre a placa de cobre, agindo como uma máscara protetora contra a corrosão.
 
 Ao compreender o processo básico de fabricação de PCB, é possível ter uma visão clara das etapas envolvidas na produção de placas de circuito impresso de alta qualidade, fundamentais para a indústria eletrônica atual.
 

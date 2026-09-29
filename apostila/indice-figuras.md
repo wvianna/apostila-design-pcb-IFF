@@ -5,8 +5,8 @@ Arquivos em `apostila/figuras/`.
 
 | Figura | Página no PDF | Arquivo | Legenda |
 |---|---|---|---|
-| 1 | 11 | `figuras/figura-01.png` | [https://embarcados.com.br/wp-content/uploads/2016/08/Acabamento-de-](https://embarcados.com.br/wp-content/uploads/2016/08/Acabamento-de-) superf%C3%ADcie-destaque-1.jpg.webp |
-| 2 | 12 | `figuras/figura-02.png` | [https://resources.altium.com/sites/default/files/inline-images/pcb-silk-3.png](https://resources.altium.com/sites/default/files/inline-images/pcb-silk-3.png) |
+| 1 | 11 | `figuras/figura-01.png` | Exemplos de PCBs |
+| 2 | 12 | `figuras/figura-02.png` | Exemplos de serigrafias |
 | 3 | 13 | `figuras/figura-03.png` | Hot Air Solder Level-A |
 | 4 | 13 | `figuras/figura-04.png` | Hot Air Solder Level-B |
 | 5 | 13 | `figuras/figura-05.png` | Imersão em Estanho-A |

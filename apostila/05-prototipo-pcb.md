@@ -12,8 +12,6 @@ Embora o processo de fabricação de um protótipo de PCB seja geralmente semelh
 
 ## 5.3. Recomendação de manter o processo do protótipo próximo ao processo final
 
-Para garantir que os resultados obtidos durante a fase de prototipagem sejam aplicáveis à produção em massa, é importante que o processo de fabricação do protótipo seja o mais próximo possível do processo final. Isso inclui a seleção de materiais, processos de fabricação e fornecedores que sejam consistentes com os usados na produção em larga escala. Dessa forma, os engenheiros e designers
-
-podem ter maior confiança de que o produto final atenderá às expectativas de desempenho e qualidade.
+Para garantir que os resultados obtidos durante a fase de prototipagem sejam aplicáveis à produção em massa, é importante que o processo de fabricação do protótipo seja o mais próximo possível do processo final. Isso inclui a seleção de materiais, processos de fabricação e fornecedores que sejam consistentes com os usados na produção em larga escala. Dessa forma, os engenheiros e designers podem ter maior confiança de que o produto final atenderá às expectativas de desempenho e qualidade.
 
 O protótipo de PCB desempenha um papel crítico no desenvolvimento de produtos eletrônicos, permitindo que os engenheiros e designers validem e aprimorem o design antes de passar para a produção em massa. Ao garantir que o processo de fabricação do protótipo seja o mais próximo possível do processo final, é possível minimizar os riscos associados à produção em larga escala e assegurar a qualidade e o desempenho do produto final.

@@ -96,24 +96,18 @@ Pode-se também realizar o acesso pelo link contido na página de compatibilidad
 *Figura 66: Trilhas não revestidas (uncoated) par diferencial*
 
 
-No site da JLC página do controle de impedância, obtenha a contante dielétrica do tipo de material Prepeg 7628 que corresponde a 4,4.
-
-*Figura 68: Constantes dielétricas obtidas na páginas de controle de impedância do*
-
-*JLCPCB*
+No site da JLCPCB, na página de controle de impedância, obtenha a constante dielétrica do material prepreg 7628, que corresponde a 4,4.
 
 ![Figura 67: Estrutura com parâmetros para o controle de impedância](figuras/figura-67.png)
 
 *Figura 67: Estrutura com parâmetros para o controle de impedância*
 
-![Figura 68: Constantes dielétricas obtidas na páginas de controle de impedância do JLCPCB](figuras/figura-68.png)
+![Figura 68: Constantes dielétricas obtidas nas páginas de controle de impedância do JLCPCB](figuras/figura-68.png)
 
-*Figura 68: Constantes dielétricas obtidas na páginas de controle de impedância do JLCPCB*
+*Figura 68: Constantes dielétricas obtidas nas páginas de controle de impedância do JLCPCB*
 
 
-*Figura 67: Estrutura com parâmetros para o controle de impedância.*
-
-Além da constante dielétrica obtenha a altura do material Prepeg 7628 (0,21040mm) conforme a figura anterior. Inclua na calculadora a distância entre trilhas (0,2 mm em Trace Separation (S) ( mm )) valor obtido na configuração da placa classe de rede DP_90R.
+Além da constante dielétrica obtenha a altura do material prepreg 7628 (0,21040 mm) conforme a figura anterior. Inclua na calculadora a distância entre trilhas (0,2 mm em Trace Separation (S) ( mm )) valor obtido na configuração da placa classe de rede DP_90R.
 
 ![Figura 69: Parâmetros da classe DP_90R](figuras/figura-69.png)
 
@@ -131,7 +125,7 @@ Após selecionar a unidade para mm, preencher os parâmetros:
 
 #### Altura do dielétrico: 0,2104 mm
 
-Constante dielétrica para o material Prepeg 7628: 4,4
+Constante dielétrica para o material prepreg 7628: 4,4
 
 #### Separação entre trilhas: 0,2 mm
 

@@ -33,7 +33,7 @@
 | 1 | PDF inteiro | INCOMPLETO | Convertido para markdown | texto-fonte editável; o PDF não é fonte de trabalho |
 | 2 | 83 figuras | OK | Extraídas para `apostila/figuras/figura-NN.png` | a conversão descartou todas as imagens (`![` = 0) |
 | 3 | Legendas A/B (pares) | CORRIGIR | Renumeradas para ordem crescente | a conversão devolvia B antes de A (ex.: Figura 4 antes da 3) |
-| 4 | Legendas das Figuras 1 e 2 | CORRIGIR (pendente) | Mantidas como URL, crédito registrado | o material original usa a URL como legenda; não se inventou descrição |
+| 4 | Legendas das Figuras 1 e 2 | **CORRIGIDO** | "Exemplos de PCBs" e "Exemplos de serigrafias" | definidas pelo autor em 2026-09-29; o manifesto `indice-figuras.md` acompanha |
 | 5 | Sumário e Índice de figuras do original | DESLOCADO | Fora dos capítulos; manifesto em `apostila/indice-figuras.md` | são gerados pelo pipeline; mantê-los no corpo duplicaria a fonte de verdade |
 | 6 | Capa | DESLOCADO | `apostila/indice.md` | pré-textual, conforme o pipeline |
 | 7 | Galeria do cap. 8 | DESLOCADO | Tabelas de 2 colunas linearizadas em imagem + legenda + descrição | no markdown a tabela chegava corrompida e sem as imagens; nenhum texto perdido |
@@ -49,37 +49,71 @@
 | A-02 | cap. 2 | CORRIGIR | bullet `•` solto, fora de lista | `07-kicad.md`/`02-*` |
 | A-03 | cap. 2 | DESATUALIZAR | termos em inglês sem tradução ("Surface finish") | — |
 | A-04 | cap. 7 §7.7 | CORRIGIDO EM PARTE | tabelas de atalho: a hierarquia de títulos foi corrigida, mas os cabeçalhos "Tecla de / Descrição / Atalho" continuam como subtítulos — reconstruir as tabelas a partir do original | `latex/apostila.pdf` p. 50 |
-| A-05 | cap. 7 §7.8 | VERIFICAR | tabela de capacidades sem atribuição de fabricante nem data; estrutura corrompida (colunas deslocadas) | `07-kicad.md` |
+| A-05 | cap. 7 §7.8 | **CORRIGIDO** | tabela de capacidade com células desalinhadas pela conversão (colunas deslocadas, texto intercalado entre linhas) | reconstruída a partir da página do fabricante por `apostila/reconstruir-tabela-jlcpcb.py`; PDF p. 53–57 |
 | A-06 | cap. 9 | VERIFICAR | "USB requer 90 ohms com tolerância de 10 %" sem fonte | `09-controle-impedancia.md` |
 | A-07 | cap. 6 | DESATUALIZAR | "Eagle", "Mentor Graphics PADS" — nomenclatura/status provavelmente superados; lista omite alternativas atuais | `06-opcoes-eda.md` |
 | A-08 | Referências WEB | INCOMPLETO | ~metade dos links são blogs/vídeos (não são fonte técnica primária) e os guias de fabricante usados no cap. 9 não estão citados | `99-referencias-web.md` |
 | A-09 | Referências WEB | CORRIGIR | 2 URLs partidas por quebra de linha; tags `<u>` residuais | `99-referencias-web.md` |
 | A-10 | Figura 68 | CORRIGIR | a legenda está **encoberta** pela imagem da Figura 67 no PDF — a figura não é visível no documento renderizado | página 88; verificado por render |
-| A-11 | Geral | INCOMPLETO | nenhuma menção a norma IPC no texto, apesar de o repositório ter `livros/IPC Class 3 Design Guide.pdf` | varredura `IPC` = 0 ocorrências |
+| A-11 | cap. 2 §2.3 | **CORRIGIDO** | nenhuma menção a norma IPC no texto, apesar de o repositório ter `livros/IPC Class 3 Design Guide.pdf` | nova seção §2.3 (o que é a IPC, classes IPC-6011/6012, uso prático) com 2 quadros; inserida por `apostila/inserir-secao-ipc.py`; ocupa a lacuna de numeração do A-01 |
 | A-12 | cap. 9 | CORRIGIR | texto com artefatos de conversão ("requer um uma", `**o**` solto) | `09-controle-impedancia.md` |
 | A-13 | Geral | INCOMPLETO | capa sem seção de Apresentação; pipeline espera `## Apresentação` em `indice.md` | `apostila/indice.md` |
-| A-14 | cap. 7 | INCOMPLETO | valores de capacidade (0,2 mm, 0,25 mm, 1 oz, anel anular ≧0,45 mm) sem indicação de que são limites de **um** fabricante em determinada data | `07-kicad.md` |
+| A-14 | cap. 7 | **CORRIGIDO** | valores de capacidade sem indicação de fabricante e data | atribuição explícita (JLCPCB, consulta em 09/2026) na linha imediatamente acima das tabelas; a nota de quadro alerta que os valores mudam com o tempo |
 | A-15 | Geral (geração do markdown) | CORRIGIDO | **7 linhas de conteúdo perdidas** na geração anterior: a heurística de continuação de legenda consumia bolinhas em negrito e parágrafos em negrito | §9.1 |
+| A-16 | caps. 2, 4, 5, 7, 8, 10 | **CORRIGIDO** | **7 frases partidas no meio** por um fim de parágrafo falso, herdado da quebra de linha do PDF | `apostila/juntar-trechos-partidos.py`; detectadas por varredura e fixadas uma a uma |
+| A-17 | caps. 2, 4, 7, 8 | **CORRIGIDO** | 4 termos com **espaço depois de hífen legítimo** (`curtos- circuitos`, `foto- resistente`, `add- on`, `espectrômetro- dosímetro`) e 1 par de palavras transpostas (`fp- info-cachearquivo`) | `apostila/juntar-trechos-partidos.py` |
 
-Nada foi corrigido além do que a tabela §3 registra: os achados A-01 a A-14 são **propostas**, não alterações aplicadas, exceto as marcações `[VERIFICAR]`.
+Os achados A-01 a A-15 foram **propostas** da fase de auditoria. O que já foi aplicado está marcado como **CORRIGIDO** na coluna «Evidência»: a revisão de conteúdo no §9, os quadros no §5.1 e a reconstrução das tabelas do cap. 7 no §7.1.
 
-## 5. Pendências `[VERIFICAR]`
+## 5. Pendências `[VERIFICAR]` — resolvidas em 2026-09-29
 
-| Local | O que falta confirmar |
-|---|---|
-| `06-opcoes-eda.md` | status atual e fim de suporte do Eagle |
-| `06-opcoes-eda.md` | nome e fornecedor atuais do PADS |
-| `07-kicad.md` §7.8 | fabricante, documento e data da tabela de capacidades |
-| `09-controle-impedancia.md` (2 pontos) | impedância característica e tolerância do USB na especificação oficial |
-| `apostila/indice-figuras.md` | descrição real das Figuras 1 e 2 (originais citam apenas a URL) |
+| Local | Situação | Fonte |
+|---|---|---|
+| `06-opcoes-eda.md` — Eagle | **resolvido**: a Autodesk encerrou o EAGLE — deixou de ser vendido e suportado em 07/06/2026 | Autodesk, *Autodesk EAGLE is no longer available — Next steps and FAQ* |
+| `06-opcoes-eda.md` — PADS | **resolvido**: hoje é **Siemens PADS Professional** (o PADS era da Mentor Graphics) | Siemens, *PADS PCB design software* |
+| `07-kicad.md` §7.8 — tabela | **resolvido**: a atribuição **já existia** (JLCPCB, 11/2024) — o marcador era falso alarme. A **integridade** foi corrigida pela reconstrução das 6 subseções (§7.1), com a atribuição atualizada para 09/2026 | JLCPCB, *PCB Manufacturing & Assembly Capabilities* |
+| `09-controle-impedancia.md` — USB | **corrigido**: o USB 2.0 exige **90 Ω ±15%**; o ±10% que o texto citava é a **tolerância de fabricação** da impedância controlada, não o requisito da interface | Texas Instruments, *USB layout basics*; JLCPCB (impedance tolerance ±10%) |
+| `apostila/indice-figuras.md` — Figuras 1 e 2 | **resolvido**: no documento original a legenda era a própria URL. O autor definiu "Exemplos de PCBs" e "Exemplos de serigrafias" em 2026-09-29 | decisão editorial do autor |
+
+Os marcadores inline foram removidos do texto; a informação corrigida passou para o corpo dos capítulos, com a fonte indicada. **0 `[VERIFICAR]` no PDF.**
+
+## 5.1 Quadros de destaque (novo)
+
+Mecanismo: div marcada no markdown → filtro Lua → ambiente `quadro` (tcolorbox) no LaTeX.
+
+```markdown
+::: {.quadro tipo="dica" titulo="Rótulo"}
+Texto do quadro.
+:::
+```
+
+Tipos e cores: `nota` (azul), `dica` (verde), `atencao` (laranja), `importante` (vermelho).
+Arquivos: `latex/quadros.lua` e o ambiente em `latex/apostila.tex`.
+
+Oito quadros, cada um **substituindo** o texto que estava em prosa ou resumindo uma seção nova (sem duplicar conteúdo):
+
+| Onde | Tipo | Título |
+|---|---|---|
+| §2.3.1 | nota | Por que isso importa no seu projeto |
+| §2.3.3 | dica | Qual classe escolher |
+| §3.7 | importante | Plano de terra: um só, contínuo |
+| §3.8 | dica | Regra prática: espaçamento entre trilhas (3W) |
+| §3.10 | atenção | Ângulos na trilha: use 45° |
+| §3.14 | atenção | Nunca ligue o microcontrolador direto no conector |
+| §7.8 | dica | Antes de mandar fabricar |
+| §9.4 | importante | Impedância do par diferencial USB |
+
+## 5.2 Pendências herdadas
 
 ## 6. Limitações e riscos residuais
 
 - A auditoria é **dirigida por varredura automatizada**; não é leitura integral das 98 páginas. Achados de conteúdo técnico não capturáveis por padrão (afirmação incorreta sem valor numérico) podem existir.
-- A tabela de capacidades do cap. 7 exige **revisão manual** contra a fonte do fabricante: a perda de estrutura na conversão impede correção automática. No PDF ela aparece como tabela, com o corpo reduzido, mas o conteúdo das células continua embaralhado.
+- ~~A tabela de capacidades do cap. 7 exige revisão manual~~ → **resolvida** (§7.1). Registre-se a natureza da correção: as células foram **transcritas da página do fabricante**, não recuperadas do PDF de origem — o texto da apostila é, nessas 6 subseções, uma paráfrase em pt-BR da fonte, e não o texto do autor. Como os valores mudam, **exigem confirmação do autor** antes de uso em aula.
 - **Não houve validação com o autor** do conteúdo técnico: o PDF compila e está estruturalmente correto, o que não equivale a conteúdo revisado.
 - O pipeline depende do markdown intermediário de `@firecrawl/anydoc` (`/tmp/apostila-src.md`), que precisa ser regerado antes de rodar `apostila/build-md.py`.
-- A origem de cada figura é o PDF da apostila, não o material original de terceiros; os créditos das Figuras 1 e 2 apontam para os URLs citados no documento.
+- A origem de cada figura é o PDF da apostila, não o material original de terceiros. **As legendas das Figuras 1 e 2 deixaram de registrar o URL de origem** (§3, linha 4): o crédito precisa ser reposto na seção de referências, já que a apostila reutiliza imagens de terceiros.
+- O esquema de cores dos títulos (`titlesec`, §7.3) é uma escolha de apresentação: **não foi validado com o autor** e não altera conteúdo. Impressão em preto e branco mantém a hierarquia pelo tamanho e pelo peso das fontes.
+- O Capítulo 9 foi revisado apenas quanto à afirmação sobre o USB (§5), **não** integralmente contra `livros/Controlled Impedance Design Guide.pdf`.
 - Títulos de nível 4 que na origem são cabeçalhos de tabela aparecem como subtítulos sem número (A-04).
 
 ## 7. Pipeline reproduzível
@@ -88,16 +122,80 @@ Nada foi corrigido além do que a tabela §3 registra: os achados A-01 a A-14 s�
 |---|---|
 | Extrair texto do PDF | `npx -y @firecrawl/anydoc docs/materialApoioKicad_Optativa_R9.pdf -o /tmp/apostila-src.md` |
 | Extrair as figuras | `python3 apostila/extrair-figuras.py docs/materialApoioKicad_Optativa_R9.pdf apostila/figuras --report /tmp/figuras-report.json` |
-| Gerar `apostila/*.md` | `python3 apostila/build-md.py` |
-| Compilar o PDF | `cd latex && ./build-pdf.sh` |
+| Gerar `apostila/*.md` | `python3 apostila/build-md.py` (sobrescreve TODOS os `apostila/*.md`) |
+| Corrigir legendas 1 e 2 e o índice | `python3 apostila/corrigir-legendas.py` |
+| Inserir/atualizar a seção IPC | `python3 apostila/inserir-secao-ipc.py` |
+| Rejuntar trechos partidos pela conversão | `python3 apostila/juntar-trechos-partidos.py` |
+| Reconstruir as tabelas do cap. 7 | `python3 apostila/reconstruir-tabela-jlcpcb.py` |
+| Compilar o PDF | `cd latex && ./build-pdf.sh` (lê do **disco**) |
+
+Ordem obrigatória: gravar os buffers do editor **antes** de rodar os scripts. Os scripts
+reescrevem os arquivos direto no disco e um buffer defasado do editor, ao ser gravado
+depois, **reverte** o trabalho do script sem aviso — foi o que apagou as legendas 1 e 2
+entre duas compilações.
+
+| `apostila/corrigir-legendas.py` | Legenda das Figuras 1 e 2 (a legenda era a URL de origem) + limpeza do resíduo de URL quebrada em itálico; no cap. 9, remove a legenda duplicada da Figura 68 e a cópia extra da Figura 67. No manifesto `indice-figuras.md`, atualiza as legendas 1 e 2. |
+| `apostila/inserir-secao-ipc.py` | Cria o §2.3 (Normas IPC) a partir do texto de `livros/IPC Class 3 Design Guide.pdf`. Só afirma o que essa fonte declara. Atualiza a tabela das classes para 3 colunas se encontrar a versão antiga de 4. |
+| `apostila/juntar-trechos-partidos.py` | Rejunta frases partidas por fim de parágrafo falso (A-16) e remove espaço depois de hífen legítimo (A-17). Os casos estão fixados um a um; os modos são **explícitos** nas listas, porque inferir o modo pela pontuação duplicou frases numa versão anterior. |
+
+### Contagem de traços define a largura da coluna
+
+O pandoc deriva a largura relativa de cada coluna do número de traços na linha
+separadora da tabela em markdown. Uma tabela de 4 colunas com `|---|---|---|---|`
+sai com 0,25 para todas, e as colunas estreitas ficam ilegíveis. Para a tabela das
+classes IPC, `|:---------|:-----------------------|:--------------------------------------------------------|`
+produz 0,11 / 0,26 / 0,63.
+
+## 7.3 Esquema de cores dos títulos
+
+`latex/apostila.tex` carrega `xcolor` + `titlesec` e define quatro tons de azul, do
+mais escuro no capítulo ao mais claro na subsubseção:
+
+| Nível | Cor | Hexadecimal |
+|---|---|---|
+| Capítulo | azul profundo | `#10305A` |
+| Seção | azul médio | `#1A4A85` |
+| Subseção | azul claro | `#2A63A8` |
+| Subsubseção | azul mais claro | `#3D7BC0` |
+
+O capítulo usa a forma `display`: rótulo "CAPÍTULO N" em azul médio, título em azul
+profundo e um filete de 1,2 pt. As seções levam filete de 0,7 pt.
+
+Dois cuidados verificados: os quatro tons passam no contraste mínimo para texto
+grande sobre branco, e `titlesec` **não** vaza cor para o corpo — as legendas de
+figura continuam em preto.
+
+## 7.4 Tabelas de capacidade do cap. 7 (reconstrução)
+
+As tabelas de §7.8 vinham da conversão com as células desalinhadas — nas 6 subseções
+(Especificações, Perfuração, Larguras, Máscara de solda, Lenda, Contorno), o separador
+`|---|---|` aparecia **entre** as linhas de dados, o que quebrava a tabela e fazia o
+pandoc imprimir parte delas como texto literal.
+
+Reconstruídas a partir da página de capacidades do fabricante (`jlcpcb.com/capabilities/pcb-capabilities`),
+com 3 colunas (Característica · Capacidade · Descrição) e descrições em pt-BR. O script
+`apostila/reconstruir-tabela-jlcpcb.py` guarda o conteúdo e substitui o bloco entre
+`#### Especificações do PCB` e `#### Lenda`, sendo reexecutável quando o fabricante
+atualizar a página.
+
+**Atenção**: os valores passaram a ser os publicados em **09/2026**, não os de 11/2024
+que o texto citava antes. As diferenças encontradas incluem a expansão da máscara de
+solda (era 0,038 mm, agora 1:1 com LDI atualizado em jun/2025) e o cobre acabado da
+camada externa (era 1/2 oz, agora 1 a 4,5 oz em 2 camadas).
 
 ## 8. Próximo passo sugerido
 
-1. Resolver as pendências `[VERIFICAR]` (§5) — começando pela tabela do cap. 7 e pela tolerância do USB.
-2. Aplicar as correções A-02, A-03, A-09, A-12 (mecânicas, sem risco editorial).
-3. Reconstruir as tabelas de atalho do cap. 7 e a tabela de capacidades a partir da fonte do fabricante, com atribuição e data (A-04, A-05, A-14).
-4. Atualizar a lista de ferramentas EDA do cap. 6 e as Referências WEB (A-07, A-08).
-5. Criar a seção de Apresentação em `apostila/indice.md` (A-13).
+**Concluído**: §5 (todas as pendências `[VERIFICAR]`), §5.1 (quadros de destaque),
+§7.1 (tabelas de capacidade do cap. 7), A-05, A-14, A-15 e as correções de conteúdo
+do cap. 3 (§9.2).
+
+**Pendente**:
+
+1. Aplicar as correções mecânicas restantes: A-02, A-03, A-09, A-12.
+2. Reconstruir as tabelas de atalho do cap. 7 (§7.7), cujos cabeçalhos continuam como subtítulos sem número (A-04).
+3. Atualizar a lista de ferramentas EDA do cap. 6 e as Referências WEB (A-07, A-08).
+4. Criar a seção de Apresentação em `apostila/indice.md` (A-13).
+5. A-10 (Figura 68 encoberta) e A-11 (ausência de menção a IPC) dependem de decisão editorial — a primeira reproduz um defeito do próprio PDF de origem.
 
 ## 9. Revisão técnica (correções de conteúdo aplicadas)
 

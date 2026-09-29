@@ -39,6 +39,23 @@ Saída: `apostila.pdf` (cópia de `build/apostila.pdf`).
   `max width=\linewidth`, `max height=0.82\textheight`.
 - **Referências WEB**: capítulo sem número, como no original.
 
+## Quadros de destaque
+
+No markdown da apostila:
+
+```markdown
+::: {.quadro tipo="dica" titulo="Rótulo do quadro"}
+Texto do quadro. Aceita **negrito**, listas e equações.
+:::
+```
+
+`tipo`: `nota` (azul), `dica` (verde), `atencao` (laranja), `importante` (vermelho).
+A conversão é feita por [`quadros.lua`](./quadros.lua); o ambiente `quadro` está
+definido em `apostila.tex` (tcolorbox, quebrável entre páginas).
+
+As cercas `:::` são reconhecidas por `build-tex.py` como estrutura — sem isso o
+juntador de parágrafos as absorveria e o quadro não seria gerado.
+
 ## Limitações conhecidas
 
 - **O build lê do disco.** Depois de editar `../apostila/*.md`, grave o arquivo

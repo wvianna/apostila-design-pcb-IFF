@@ -39,6 +39,39 @@
 \usepackage{xurl}
 \usepackage[hidelinks,breaklinks]{hyperref}
 
+% --- esquema de cores dos títulos --------------------------------------
+% Variações do azul: mais escura no capítulo e clareando conforme o nível
+% desce, para reforçar a hierarquia sem perder legibilidade no papel.
+\usepackage{xcolor}
+\definecolor{azulCap}{HTML}{10305A}     % capítulo   — azul profundo
+\definecolor{azulSec}{HTML}{1A4A85}     % seção      — azul médio
+\definecolor{azulSub}{HTML}{2A63A8}     % subseção   — azul claro
+\definecolor{azulSubSub}{HTML}{3D7BC0}  % subsubseção — azul mais claro
+
+\usepackage{titlesec}
+
+\titleformat{\chapter}[display]
+  {\normalfont\bfseries\color{azulCap}}
+  {\filright\large\color{azulSec}\MakeUppercase{\chaptertitlename}~\thechapter}
+  {10pt}
+  {\LARGE}
+  [\vspace{8pt}{\color{azulCap}\titlerule[1.2pt]}]
+
+\titleformat{\section}
+  {\normalfont\Large\bfseries\color{azulSec}}{\thesection}{0.6em}{}%
+  [\vspace{3pt}{\color{azulSub}\titlerule[0.7pt]}]
+
+\titleformat{\subsection}
+  {\normalfont\large\bfseries\color{azulSub}}{\thesubsection}{0.5em}{}
+
+\titleformat{\subsubsection}
+  {\normalfont\normalsize\bfseries\color{azulSubSub}}{\thesubsubsection}{0.5em}{}
+
+\titlespacing*{\chapter}{0pt}{0pt}{30pt}
+\titlespacing*{\section}{0pt}{18pt}{9pt}
+\titlespacing*{\subsection}{0pt}{14pt}{7pt}
+\titlespacing*{\subsubsection}{0pt}{12pt}{6pt}
+
 % --- legendas ----------------------------------------------------------
 % O material já traz o número na própria legenda ("Figura N: ..."), e a
 % numeração não é sequencial por capítulo. Por isso o contador do LaTeX

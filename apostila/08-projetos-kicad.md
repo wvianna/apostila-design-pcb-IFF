@@ -34,7 +34,7 @@ ANAVI pHAT infravermelho Leon Anavi ANAVI Infrared pHAT é uma placa adicional q
 
 *Figura 35: ANAVI Light pHAT é uma placa add-on Raspberry Pi para controlar tiras de LED RGB de 12 V*
 
-ANAVI pHAT leve Leon Anavi ANAVI Light pHAT é uma placa add- on Raspberry Pi para controlar tiras de LED RGB de 12 V. Além disso, tem três slots para módulos de sensor I2C, slot para sensor de movimento PIR, pinos UART para depuração e EEPROM com informações do fabricante da placa.
+ANAVI pHAT leve Leon Anavi ANAVI Light pHAT é uma placa add-on Raspberry Pi para controlar tiras de LED RGB de 12 V. Além disso, tem três slots para módulos de sensor I2C, slot para sensor de movimento PIR, pinos UART para depuração e EEPROM com informações do fabricante da placa.
 
 
 ![Figura 36: controlador de motor de uso geral projetado com kicad em torno do microcontrolador ATmega328 e driver de motor L298P](figuras/figura-36.png)
@@ -112,10 +112,7 @@ Quadro Suculento Laboratórios plugg.ee JuicyBoard do plugg.ee Labs é uma plata
 
 *Figura 47: LABDOS-espectrômetro de radiação ionizante*
 
-LABDOS-espectrômetro de radiação ionizante baseado em semicondutores Tecnologias Científicas Universais sro (UST) LABDOS01 é um espectrômetro- dosímetro de código aberto baseado em um diodo PIN de silício e é destinado a pesquisas científicas e propósitos experimentais. Uma porta USB-C ou conector JST-GH protege a energia e a comunicação. O dispositivo pode ser usado estaticamente (localizado em um local específico, por exemplo, laboratório ou base) ou em aplicações móveis (como carros ou UAVs). O espectrômetro é alojado em uma caixa impressa em 3D, que traz resistência mecânica essencial e permite o desenvolvimento futuro de
-
-
-gabinetes de usuário e novas integrações. O objetivo do LABDOS01 é criar um dispositivo de medição de código aberto, acessível, de alta qualidade, confiável e simples — um espectrômetro de energia de radiação para a comunidade científica.
+LABDOS-espectrômetro de radiação ionizante baseado em semicondutores Tecnologias Científicas Universais sro (UST) LABDOS01 é um espectrômetro-dosímetro de código aberto baseado em um diodo PIN de silício e é destinado a pesquisas científicas e propósitos experimentais. Uma porta USB-C ou conector JST-GH protege a energia e a comunicação. O dispositivo pode ser usado estaticamente (localizado em um local específico, por exemplo, laboratório ou base) ou em aplicações móveis (como carros ou UAVs). O espectrômetro é alojado em uma caixa impressa em 3D, que traz resistência mecânica essencial e permite o desenvolvimento futuro de gabinetes de usuário e novas integrações. O objetivo do LABDOS01 é criar um dispositivo de medição de código aberto, acessível, de alta qualidade, confiável e simples — um espectrômetro de energia de radiação para a comunidade científica.
 
 ![Figura 48: NUCO-V-placa de desenvolvimento compatível com NUCLEO-64© para as séries STM32F7 e STM32H7 com Black Magic Probe integrado](figuras/figura-48.png)
 

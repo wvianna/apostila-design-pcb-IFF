@@ -49,9 +49,7 @@ No exemplo do circuito pode-se observar alguns elementos importantes:
 - TRIAC Isolado: normalmente é utilizado TRIAC Isolado com função de zero crossing; assim, só ocorrerá o acionamento ou desacionamento no momento da passagem do “0” da senóide, evitando, por exemplo, a formação de faíscas quando chaveamos cargas indutivas.
 ## 10.5. Saída digitais a Rele
 
-Esse tipo de saída é bem versátil, pois pode comutar tanto cargas em corrente contínua (C.C.) quanto em corrente alternada (C.A.). No entanto, as saídas a relé apresentam desgaste mecânico proporcional ao número de chaveamentos e à
-
-corrente que passa pelos contatos. Para aumentar a vida útil do relé, pode-se utilizar um relé auxiliar externo, inserindo-o entre a saída do esquemático e a carga, ou ainda, intercalar um relé de maior potência ou uma chave estática, o que ajuda a "proteger" os contatos do relé interno. As saídas a relé geralmente têm um tempo de resposta mais lento quando comparadas às saídas a transistor ou a TRIAC. A figura a seguir ilustra o circuito de uma saída com contato seco ou relé.
+Esse tipo de saída é bem versátil, pois pode comutar tanto cargas em corrente contínua (C.C.) quanto em corrente alternada (C.A.). No entanto, as saídas a relé apresentam desgaste mecânico proporcional ao número de chaveamentos e à corrente que passa pelos contatos. Para aumentar a vida útil do relé, pode-se utilizar um relé auxiliar externo, inserindo-o entre a saída do esquemático e a carga, ou ainda, intercalar um relé de maior potência ou uma chave estática, o que ajuda a "proteger" os contatos do relé interno. As saídas a relé geralmente têm um tempo de resposta mais lento quando comparadas às saídas a transistor ou a TRIAC. A figura a seguir ilustra o circuito de uma saída com contato seco ou relé.
 
 ![Figura 83: Exemplo esquemático para saída digital com acionamento de carga CA ou CC](figuras/figura-83.png)
 

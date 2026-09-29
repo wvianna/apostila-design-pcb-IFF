@@ -32,19 +32,10 @@ O cobre é um elemento essencial nas PCBs, utilizado para formar as trilhas cond
 
 ### Máscara de solda
 
-A máscara de solda é uma camada de polímero aplicada sobre as áreas expostas de cobre nas PCBs, com a função de proteger contra oxidação, prevenir curtos- circuitos e facilitar o processo de soldagem. Disponível em várias cores, como verde,
+A máscara de solda é uma camada de polímero aplicada sobre as áreas expostas de cobre nas PCBs, com a função de proteger contra oxidação, prevenir curtos-circuitos e facilitar o processo de soldagem. Disponível em várias cores, como verde, vermelho e azul, essa camada contribui para a durabilidade e confiabilidade da placa, ao mesmo tempo que oferece um acabamento estético. A máscara de solda geralmente é composta por uma camada de polímero e apresenta cores como verde escuro, vermelho, azul, preto, branco ou outra cor disponível no fabricante.
 
-vermelho e azul, essa camada contribui para a durabilidade e confiabilidade da placa, ao mesmo tempo que oferece um acabamento estético. A máscara de solda geralmente é composta por uma camada de polímero e apresenta cores como verde escuro, vermelho, azul, preto, branco ou outra cor disponível no fabricante.
+![Figura 1: Exemplos de PCBs](figuras/figura-01.png)
 
-![Figura 1: [https://embarcados.com.br/wp-content/uploads/2016/08/Acabamento-de-](https://embarcados.com.br/wp-content/uploads/2016/08/Acabamento-de-) superf%C3%ADcie-destaque-1.jpg.webp](figuras/figura-01.png)
-
-
-
-*[https://embarcados.com.br/wp-content/uploads/201*](https://embarcados.com.br/wp-content/uploads/201*)
-
-*6/08/Acabamento-de-superf%C3%ADcie-destaque-*
-
-*1.jpg.webp*
 
 ### Camada de serigrafia
 
@@ -52,13 +43,8 @@ A camada de serigrafia é composta por tinta aplicada na superfície da PCB, des
 
 Ao compreender os principais elementos das Placas de Circuito Impresso e suas funções, é possível garantir que o processo de fabricação de PCBs resulte em produtos de alta qualidade, atendendo às demandas específicas de cada projeto eletrônico.
 
-![Figura 2: [https://resources.altium.com/sites/default/files/inline-images/pcb-silk-3.png](https://resources.altium.com/sites/default/files/inline-images/pcb-silk-3.png)](figuras/figura-02.png)
+![Figura 2: Exemplos de serigrafias](figuras/figura-02.png)
 
-
-
-*[https://resources.altium.com/sites/default/files/inli*](https://resources.altium.com/sites/default/files/inli*)
-
-*ne-images/pcb-silk-3.png*
 
 ### Acabamento de superfície
 
@@ -148,6 +134,58 @@ As técnicas mais comuns para realizar o acabamento superficial são:
 
 
 
+## Normas IPC
+
+Uma placa que funciona na bancada não é automaticamente uma placa que pode ser fabricada em série. Para que projetista, fabricante e montador cheguem ao mesmo entendimento sobre o que é uma placa **aceitável**, a indústria eletrônica se apoia em normas — e a mais difundida delas é publicada pela **IPC**.
+
+### O que é a IPC
+
+A IPC é a associação global da indústria de interconexão eletrônica. O nome veio de *Institute for Printed Circuits* e depois foi alterado para *Institute for Interconnecting and Packaging Electronic Circuits*; hoje a sigla é usada como nome próprio da organização.
+
+Trata-se de uma associação mantida por seus membros, que publica especificações de forma periódica. As normas IPC são as regras **mais amplamente aceitas** pela indústria eletrônica e cobrem todas as etapas do ciclo de desenvolvimento de um produto: projeto, compras, montagem, empacotamento e inspeção. Segui-las ajuda a fabricar placas seguras, confiáveis e de alta qualidade — e, para o projetista, produz um efeito prático imediato: **mantém projetista e fabricante no mesmo entendimento** sobre o que a placa precisa cumprir.
+
+::: {.quadro tipo="nota" titulo="Por que isso importa no seu projeto"}
+Uma norma não é uma formalidade. As classes IPC existem porque a **mesma** placa pode ser considerada aprovada ou reprovada dependendo do critério adotado. Ao especificar a classe, você deixa explícito qual nível de inspeção e qual tolerância a defeito são aceitáveis para o seu produto — e evita que cada lado julgue a placa por uma régua diferente.
+
+:::
+
+### As classes de qualidade
+
+A **IPC-6011** descreve as classes de PCB e os **defeitos permitidos** em cada tipo de placa. São três classes, com o acréscimo posterior de uma quarta, definida pela **IPC-6012**:
+
+| Classe | Aplicação típica | Confiabilidade exigida e defeitos admitidos |
+|:---------|:-----------------------|:--------------------------------------------------------|
+| **Classe 1** | Produtos eletrônicos de uso geral — controles remotos de TV, lâmpadas LED, brinquedos infantis | Vida útil limitada e função simples. Admite vários defeitos cosméticos, desde que não afetem o funcionamento; a confiabilidade não é fator crítico. É a placa mais barata de fabricar. |
+| **Classe 2** | Produtos eletrônicos de serviço dedicado — notebooks, smartphones, tablets, equipamentos de comunicação | Confiabilidade maior e vida útil estendida; normas mais rigorosas que a classe 1, mas ainda se admitem algumas imperfeições cosméticas. O serviço ininterrupto é preferível, porém não crítico, e não há exposição a condições ambientais extremas. |
+| **Classe 3** | Produtos eletrônicos de alto desempenho — suporte à vida, equipamentos militares, monitoramento eletrônico, automotivo | Deve fornecer desempenho contínuo, ou sob demanda, **sem parada** do equipamento; o ambiente de uso pode ser excepcionalmente severo. Exige níveis elevados de inspeção e ensaio, o que a torna altamente confiável. |
+| **Classe 3/A** | Circuitos impressos de uso espacial e aviônica militar (IPC-6012) — aeroespacial, sistemas aéreos militares, sistemas de mísseis | Categoria mais alta para circuitos impressos. Critérios de fabricação muito rigorosos, pois a placa deve continuar operando em condições críticas. Consideravelmente mais cara, por precisar estar próxima da perfeição. |
+
+A diferença central entre as classes **não está no desenho da placa, e sim no grau de inspeção**: são as classes que definem quais defeitos são admissíveis durante a fabricação.
+
+Vale desfazer um equívoco comum: as classes 3 e 3/A são usadas principalmente em equipamentos militares e aeroespaciais, mas **não são exclusivas** dessas áreas. Elas podem ser aplicadas a qualquer produto — inclusive aos exemplos citados na classe 2 —, porém deixam de ser economicamente viáveis pelo esforço de fabricação e de inspeção que exigem.
+
+### Como escolher a classe
+
+Ao escolher a classe, o projetista está escolhendo a **vida útil** do produto. Muitas vezes a classe 2 atende a todos os requisitos e sai mais econômica. Se, além de a aplicação ser crítica, espera-se que a placa dure muitos anos, a classe 3 passa a ser a escolha adequada. O ambiente em que o produto vai operar também precisa entrar na conta, porque é ele que determina o grau de confiabilidade exigido do projeto.
+
+::: {.quadro tipo="dica" titulo="Qual classe escolher"}
+A escolha é econômica antes de ser técnica. A **classe 2** costuma atender à maior parte dos produtos — e sai mais barata. Reserve a **classe 3** para aplicações críticas ou para produtos que precisem durar muitos anos: o material de referência cita a fronteira de **15 anos** como um dos critérios de decisão. O ambiente de operação do produto é o outro critério a considerar.
+
+:::
+
+### Onde a IPC aparece na prática
+
+Duas situações concretas em que a norma entra no dia a dia do projetista:
+
+- **Anel anular:** a IPC define a posição dos furos sobre a ilha de solda (*pad*) e
+  a largura do anel externo que resta depois da furação. Quando a ilha não circunda completamente o furo, tem-se um *annular ring breakout* — condição que a norma trata explicitamente, com limites de aceitação próprios para cada classe.
+- **Juntas de solda e defeitos aceitáveis:** a IPC trata separadamente os defeitos
+  que comprometem o desempenho da placa e as imperfeições puramente cosméticas, e estabelece padrões de aceitação para os processos de montagem. O **mesmo** defeito pode ser aprovado na classe 1 e reprovado na classe 3: o defeito não muda, o critério é que muda.
+
+O Capítulo 7 traz os valores de anel anular e de furação praticados por um fabricante real — é com esses números, e não com valores arbitrários, que o seu projeto é conferido no DRC.
+
+Fonte: IPC, *IPC Class 3 Design Guide* (material de apoio da disciplina).
+
 ## Categorias de PCBs
 
 - **PCBs de Face Única**: Contêm uma única camada de cobre em um dos lados do substrato, utilizadas em circuitos simples e de baixo custo.
@@ -218,7 +256,11 @@ Mantenha as trilhas de alimentação largas o suficiente para minimizar a queda 
 
 - **Plano de Terra Sólido:** Crie um plano de terra contínuo em uma camada interna da PCB para fornecer um retorno eficiente para os sinais.
 - **Conexão de Terra:** Conecte o plano de terra a todos os pontos de terra do circuito. Use várias vias para conectar as camadas de terra.
-::: {.quadro tipo="importante" titulo="Plano de terra: um só, contínuo"} Prefira **um plano de terra contínuo** a dividi-lo em regiões analógica e digital. O plano contínuo minimiza a impedância entre dois pontos de terra quaisquer e garante o caminho de retorno da corrente. A separação em regiões só se justifica em casos específicos e precisa de **um único ponto de interligação controlado** entre elas: dividir sem esse ponto transforma a emenda em antena e piora a integridade do sinal. :::
+
+::: {.quadro tipo="importante" titulo="Plano de terra: um só, contínuo"}
+Prefira **um plano de terra contínuo** a dividi-lo em regiões analógica e digital. O plano contínuo minimiza a impedância entre dois pontos de terra quaisquer e garante o caminho de retorno da corrente. A separação em regiões só se justifica em casos específicos e precisa de **um único ponto de interligação controlado** entre elas: dividir sem esse ponto transforma a emenda em antena e piora a integridade do sinal.
+
+:::
 
 - **Costura de vias (*stitching*):** posicione vias de terra na origem e no destino do sinal, para que a corrente de retorno possa voltar pelo plano de referência.
 
@@ -236,7 +278,11 @@ Mantenha as trilhas de alimentação largas o suficiente para minimizar a queda 
 ## Minimização de Interferências
 
 - **Roteamento Paralelo e Perpendicular:** o acoplamento indutivo e capacitivo (*crosstalk*) **cresce com o comprimento em que duas trilhas correm paralelas e próximas**, e é mínimo quando elas se cruzam perpendicularmente. Portanto: mantenha o trecho paralelo entre trilhas sensíveis o mais curto possível, cruze-as em ângulo reto quando o cruzamento for inevitável e afaste-as onde o paralelismo for necessário.
-::: {.quadro tipo="dica" titulo="Regra prática: espaçamento entre trilhas (3W)"} Para reduzir *crosstalk*, mantenha o centro de uma trilha a pelo menos **3 vezes a sua largura (3W)** de outra trilha; **2W** é o mínimo aceitável. A regra **não** se aplica ao espaçamento interno de um par diferencial. :::
+
+::: {.quadro tipo="dica" titulo="Regra prática: espaçamento entre trilhas (3W)"}
+Para reduzir *crosstalk*, mantenha o centro de uma trilha a pelo menos **3 vezes a sua largura (3W)** de outra trilha; **2W** é o mínimo aceitável. A regra **não** se aplica ao espaçamento interno de um par diferencial.
+
+:::
 
 - Trilhas de Sinal de Referência: Para sinais diferenciais, como USB ou Ethernet, mantenha as trilhas de sinal e referência equidistantes e paralelas respeitando a impedância necessária.
 - **Referência de terra próxima ao sinal:** o plano de terra adjacente é o **caminho de retorno da corrente** e deve ficar contínuo e próximo da trilha de sinal — afastar o sinal do plano de referência aumenta a impedância e a emissão. O que precisa de afastamento são as trilhas de **outros sinais**, não o plano de referência.
@@ -257,7 +303,10 @@ Mantenha as trilhas de alimentação largas o suficiente para minimizar a queda 
 
 ## Simplificação do Layout
 
-::: {.quadro tipo="atencao" titulo="Ângulos na trilha: use 45°"} Evite ângulos agudos e cantos fechados; prefira ângulos de 45°. A razão principal é de **fabricação**: ângulos agudos formam armadilha de ácido (*acid trap*) na etapa de corrosão, o que pode supercorroer a trilha e abrir o circuito. :::
+::: {.quadro tipo="atencao" titulo="Ângulos na trilha: use 45°"}
+Evite ângulos agudos e cantos fechados; prefira ângulos de 45°. A razão principal é de **fabricação**: ângulos agudos formam armadilha de ácido (*acid trap*) na etapa de corrosão, o que pode supercorroer a trilha e abrir o circuito.
+
+:::
 - Minimize o uso de vias desnecessárias, pois elas aumentam o custo e podem reduzir a confiabilidade.
 
 ## Serigrafia Clara e Informativa
@@ -279,7 +328,10 @@ Garanta acesso físico aos pontos de teste durante a fase de inspeção e depura
 
 ## Ligação das E/S do MCU com os conectores
 
-::: {.quadro tipo="atencao" titulo="Nunca ligue o microcontrolador direto no conector"} Nunca ligue diretamente os terminais de um microcontrolador nos conectores ou bornes da placa. Use uma interface entre as seções do sistema, como mostra a Figura 21. :::
+::: {.quadro tipo="atencao" titulo="Nunca ligue o microcontrolador direto no conector"}
+Nunca ligue diretamente os terminais de um microcontrolador nos conectores ou bornes da placa. Use uma interface entre as seções do sistema, como mostra a Figura 21.
+
+:::
 
 ![Figura 21: É recomendado o uso de interfaces entre seções do sistema](figuras/figura-21.png)
 
@@ -295,17 +347,15 @@ O processo começa com a criação de um padrão das trilhas condutoras a serem 
 
 ## Utilização de foto-resistente e máscara fotográfica
 
-A placa de cobre revestida é então preparada com uma camada de foto- resistente, um material sensível à luz que reage quando exposto à radiação ultravioleta (UV). A máscara fotográfica é posicionada sobre a placa e, em seguida, a luz UV é aplicada. As áreas do foto-resistente expostas à luz UV endurecem, enquanto as áreas protegidas pela máscara permanecem inalteradas.
+A placa de cobre revestida é então preparada com uma camada de foto-resistente, um material sensível à luz que reage quando exposto à radiação ultravioleta (UV). A máscara fotográfica é posicionada sobre a placa e, em seguida, a luz UV é aplicada. As áreas do foto-resistente expostas à luz UV endurecem, enquanto as áreas protegidas pela máscara permanecem inalteradas.
 
 ## Etapa de corrosão do cobre com cloreto férrico
 
-Após a exposição à luz UV, a placa é submersa em uma solução de cloreto férrico, um agente corrosivo que remove o cobre nas áreas não protegidas pelo foto- resistente endurecido. Dessa forma, apenas as trilhas desejadas permanecem na placa.
+Após a exposição à luz UV, a placa é submersa em uma solução de cloreto férrico, um agente corrosivo que remove o cobre nas áreas não protegidas pelo foto-resistente endurecido. Dessa forma, apenas as trilhas desejadas permanecem na placa.
 
 ## Alternativas: Fresagem CNC e serigrafia com tintas resistentes à corrosão
 
-Além do processo fotográfico, existem outras técnicas para a criação do padrão de trilhas nas PCBs. A fresagem CNC (Controle Numérico Computadorizado) é uma opção que utiliza máquinas de precisão para cortar diretamente o cobre, formando as trilhas. A serigrafia com tintas resistentes à corrosão é outra alternativa, onde a
-
-tinta é aplicada diretamente sobre a placa de cobre, agindo como uma máscara protetora contra a corrosão.
+Além do processo fotográfico, existem outras técnicas para a criação do padrão de trilhas nas PCBs. A fresagem CNC (Controle Numérico Computadorizado) é uma opção que utiliza máquinas de precisão para cortar diretamente o cobre, formando as trilhas. A serigrafia com tintas resistentes à corrosão é outra alternativa, onde a tinta é aplicada diretamente sobre a placa de cobre, agindo como uma máscara protetora contra a corrosão.
 
 Ao compreender o processo básico de fabricação de PCB, é possível ter uma visão clara das etapas envolvidas na produção de placas de circuito impresso de alta qualidade, fundamentais para a indústria eletrônica atual.
 
@@ -380,9 +430,7 @@ Embora o processo de fabricação de um protótipo de PCB seja geralmente semelh
 
 ## Recomendação de manter o processo do protótipo próximo ao processo final
 
-Para garantir que os resultados obtidos durante a fase de prototipagem sejam aplicáveis à produção em massa, é importante que o processo de fabricação do protótipo seja o mais próximo possível do processo final. Isso inclui a seleção de materiais, processos de fabricação e fornecedores que sejam consistentes com os usados na produção em larga escala. Dessa forma, os engenheiros e designers
-
-podem ter maior confiança de que o produto final atenderá às expectativas de desempenho e qualidade.
+Para garantir que os resultados obtidos durante a fase de prototipagem sejam aplicáveis à produção em massa, é importante que o processo de fabricação do protótipo seja o mais próximo possível do processo final. Isso inclui a seleção de materiais, processos de fabricação e fornecedores que sejam consistentes com os usados na produção em larga escala. Dessa forma, os engenheiros e designers podem ter maior confiança de que o produto final atenderá às expectativas de desempenho e qualidade.
 
 O protótipo de PCB desempenha um papel crítico no desenvolvimento de produtos eletrônicos, permitindo que os engenheiros e designers validem e aprimorem o design antes de passar para a produção em massa. Ao garantir que o processo de fabricação do protótipo seja o mais próximo possível do processo final, é possível minimizar os riscos associados à produção em larga escala e assegurar a qualidade e o desempenho do produto final.
 
@@ -472,9 +520,7 @@ Documentação da biblioteca esquemática legada (KiCad 5.x e *.dcm anterior). P
 
 Arquivo de cache de biblioteca de componentes esquemáticos legados *-cache.lib (KiCad 5.x e anteriores). Necessário para o carregamento adequado de um.scharquivo esquemático legado ( ).
 
-Tabela de biblioteca de símbolos: lista de bibliotecas de símbolos
-
-sym-lib-table disponíveis no editor de esquemáticos.
+Tabela de biblioteca de símbolos: sym-lib-table, lista de bibliotecas de símbolos disponíveis no editor de esquemáticos.
 
 #### Arquivos e pastas do editor de PCB
 
@@ -511,15 +557,13 @@ Arquivo de placa Legacy (KiCad 4.x e anteriores). Pode ser lido, mas *.brd não 
 
 ### Armazenando e enviando arquivos KiCad
 
-Os arquivos de esquema e placa do KiCad contêm todos os símbolos esquemáticos e footprints usados no design, então você pode fazer backup ou enviar esses arquivos por si só sem problemas. Algumas informações importantes do design são armazenadas no arquivo do projeto (.kicad_pro), então se você estiver enviando um design completo, certifique-se de incluí-lo. Alguns arquivos, como o arquivo project-local settings (.kicad_prl) e o fp- info-cachearquivo, não são necessários para enviar com seu projeto. Se você usa um sistema de controle de versão como o Git para manter o controle de seus projetos KiCad, você pode querer adicionar esses arquivos à lista de arquivos ignorados para que eles não sejam rastreados. Outros detalhes inclusive de configurações pode ser obtidos em:
+Os arquivos de esquema e placa do KiCad contêm todos os símbolos esquemáticos e footprints usados no design, então você pode fazer backup ou enviar esses arquivos por si só sem problemas. Algumas informações importantes do design são armazenadas no arquivo do projeto (.kicad_pro), então se você estiver enviando um design completo, certifique-se de incluí-lo. Alguns arquivos, como o arquivo project-local settings (.kicad_prl) e o arquivo fp-info-cache, não são necessários para enviar com seu projeto. Se você usa um sistema de controle de versão como o Git para manter o controle de seus projetos KiCad, você pode querer adicionar esses arquivos à lista de arquivos ignorados para que eles não sejam rastreados. Outros detalhes inclusive de configurações pode ser obtidos em:
 
 <u>[https://docs.kicad.org/8.0/en/kicad/kicad.html](https://docs.kicad.org/8.0/en/kicad/kicad.html)</u>
 
 ## Workflow do Kicad
 
-O fluxo de trabalho (workflow) do KiCad geralmente segue as etapas comuns de projeto de circuitos eletrônicos e design de PCB. Entretanto, conforme o desejo do
-
-projetista, algumas etapas do workflow podem ser alteradas ou até suprimidas durante o design. Ver exemplo na figura.
+O fluxo de trabalho (workflow) do KiCad geralmente segue as etapas comuns de projeto de circuitos eletrônicos e design de PCB. Entretanto, conforme o desejo do projetista, algumas etapas do workflow podem ser alteradas ou até suprimidas durante o design. Ver exemplo na figura.
 
 ![Figura 23: Workflow básico KiCAD. fonte: [https://www.slideshare.net/baoshi1/why-](https://www.slideshare.net/baoshi1/why-) and-how-to-switch-to-kicad](figuras/figura-23.png)
 
@@ -744,154 +788,119 @@ As empresas que realizam a manufatura das PCBs de forma comercial possuem limite
 
 As configurações de restrição podem ser inseridas no KiCAD “Configuração da Placa → Regras de Desenho → Restrições”. Ver figura.
 
-::: {.quadro tipo="dica" titulo="Antes de mandar fabricar"} Insira no KiCAD as restrições técnicas de fabricação, para que o próprio KiCAD aponte inconsistências no projeto, e trabalhe com **margem de pelo menos 20%** em relação aos limites do fabricante.
+::: {.quadro tipo="dica" titulo="Antes de mandar fabricar"}
+Insira no KiCAD as restrições técnicas de fabricação, para que o próprio KiCAD aponte inconsistências no projeto, e trabalhe com **margem de pelo menos 20%** em relação aos limites do fabricante.
 
-**Nota:** a estrutura desta tabela foi corrompida na conversão (células desalinhadas). Os valores precisam ser conferidos na página do fabricante antes do uso — a revisão está pendente. :::
+**Nota:** a estrutura desta tabela foi corrompida na conversão (células desalinhadas). Os valores precisam ser conferidos na página do fabricante antes do uso — a revisão está pendente.
+
+:::
 
 ![Figura 30: Interface de configuração das restrições de desenho da PCB](figuras/figura-30.png)
 
 
 
-As compatibilidades apresentadas foram obtidas na JLCPCB em 11/2024, a partir da url [jlcpcb.com/capabilities/pcb-capabilities](https://jlcpcb.com/capabilities/pcb-capabilities).
+As compatibilidades apresentadas foram conferidas na JLCPCB em 09/2026, a partir da url [jlcpcb.com/capabilities/pcb-capabilities](https://jlcpcb.com/capabilities/pcb-capabilities). Os valores são os publicados pelo fabricante nessa data e mudam com o tempo — confira a página antes de usar.
 
 #### Especificações do PCB
 
-**Característic** **Capacidade Descrição Padrões as**
-
-|Contagem de camadas Camadas|1-32|O número de camadas de cobre no PCB||
-|---|---|---|---|
-|Impedância Controlada|4/6/8/10/12/1 4/16/18/20/.../ 32 camadas|Guia do usuário para a calculadora de impedância JLCPCB Calculadora de Impedância JLCPCB||
-|Material|FR-4|Laminados de grau A de fornecedores como Nan Ya, KB, Shengyi e etc.||
-
-|Núcleo de alumínio|PCBs de núcleo de alumínio de 1 camada|||
-|---|---|---|---|
-|Núcleo de cobre|PCBs de núcleo de cobre de 1 camada com contatos diretos do dissipador de calor para o núcleo (≥ 1 × 1 mm)|||
-|PCB de RF|PCBs RF de 2 camadas de cobre de 1 oz com núcleos Rogers e PTFE|||
-|Constantes dielétricas FR-4|4.5 (PCB de 2 camadas)|7628 Pré-impregnado 4.4 3313 Perpreg 4.1 2116 Perpreg 4.16||
-|Dimensões PTFE: 590 × têm no máximo 500 × 600 máximas Dimensões Regular: 3 × Esses limites se aplicam a|Placa de circuito impresso FR4: 670 × 600 mm Rogers / PCB PCBs com espessura ≥ 0,8 de Teflon 438 mm PCB de alumínio: 602 × 506 mm PCB de cobre: 480 × 286 mm|Esses limites se aplicam a mm. Os PCBs FR4 mais finos mm. PCBs FR4 de 2 camadas podem atingir um tamanho máximo de 1020 × 600 mm.||
-
-|mínimas|3 mm. Bordas castelhadas/ chapeadas: 10 × 10 mm.|PCBs com espessura ≥ 0,6 mm. Revisão manual necessária para PCBs mais finos. A panelização é recomendada para placas de tamanho pequeno.||
-|---|---|---|---|
-|Tolerância de Dimensão|±0,1 mm|±0,1 mm (precisão) e ±0,2 mm (regular) para roteamento CNC e ±0,4 mm para vinco em V||
-|Grossura|0,4 - 4,5 mm|Espessuras para FR4 são: 0,4/0,6/0,8/1,0/1,2/1,6/2,0 mm (2,5 mm e acima são apenas para PCBs de 12+ camadas)||
-|Tolerância de espessura (Espessura ≥1,0mm)|± 10%|por exemplo, para a espessura da placa de 1,6 mm, a espessura da placa acabada varia de 1,44 mm (T- 1,6 × 10%) a 1,76 mm (T + 1,6 × 10%)||
-|Tolerância de espessura (Espessura < 1,0 mm)|± 0,1 mm|por exemplo, para a espessura da placa de 0,8 mm, a espessura da placa acabada varia de 0,7 mm (T- 0,1) a 0,9 mm (T+0,1).||
-|Camada externa acabada de cobre|1 onça / 2 onças (35umcamada externa é de 1 onça / 70um)|O peso do cobre acabado da ou 2 onças.||
-|Camada interna acabada de / 35um / cobre|0,5 oz / 1 oz / 2 oz (17,5um 70um)|O peso do cobre acabado da camada interna é de 0,5 oz por padrão.||
-|Máscara de Verde, roxo, Usamos máscara de solda LPI solda|vermelho, amarelo,|(Liquid Photo Imageable). Este é o tipo mais comum de||
-
-máscara usada hoje. A máscara de solda de tinta azul, branco curada por calor é
-
-||e preto.|geralmente encontrada em|
+| Característica | Capacidade | Descrição |
 |---|---|---|
-|||PCBs de baixo custo e de um só lado.|
-||HASL (com/sem|O FR4 tem todos os três acabamentos disponíveis,|
-|Acabament|chumbo),|mais de 6 camadas e as|
-|o de|ENIG, OSP|placas RF têm apenas ENIG.|
-|superfície|(somente placas com núcleo de cobre)|Placas de núcleo de alumínio têm apenas HASL. Placas de núcleo de cobre têm apenas OSP.|
+| Contagem de camadas | 1–32 | Número de camadas de cobre da placa. |
+| Impedância controlada | 4/6/8/10/12/14/16/18/20/…/32 camadas | Ver a calculadora de impedância da JLCPCB. |
+| Tolerância de impedância | ±10% | Tolerância padrão do serviço; ±5% sob consulta. |
+| Material | FR-4 | Laminados grau A de fornecedores como Nan Ya, KB e Shengyi. |
+| HDI | 1-step / 2-step / 3-step | Via cega de 0,075–0,15 mm (perfuração a laser); via enterrada de 0,15–0,55 mm padrão e até 0,10 mm em casos extremos; trilha/espaço mínimo de 3/3 mil (2,7/2,7 mil extremo); dimensões de 5 × 5 mm a 576 × 469 mm. |
+| Núcleo de alumínio | 1 camada | PCBs de núcleo de alumínio de uma camada. |
+| Núcleo de cobre | 1 camada | PCBs de núcleo de cobre de uma camada, com contato direto do dissipador ao núcleo (≥ 1 × 1 mm). |
+| PCB de RF | 2 camadas, 1 oz | Núcleos de Rogers e PTFE. |
+| Constantes dielétricas do FR-4 | 4,5 (placa de 2 camadas) | Prepreg 7628: 4,4; 3313: 4,1; 2116: 4,16. |
+| Dimensões máximas | FR-4 (1 camada): 606 × 510 mm; FR-4 (2 camadas): 670 × 600 mm; FR-4 (4 camadas): 663 × 593 mm; FR-4 (6+ camadas): 656 × 586 mm; Rogers/PTFE: 590 × 438 mm; alumínio: 602 × 506 mm; cobre: 480 × 286 mm | Válido para placas com espessura ≥ 0,8 mm; FR-4 mais fino chega a 599 × 497 mm. Placas de 2 camadas podem atingir 1020 × 600 mm e as de 4 camadas, 1016 × 596 mm. |
+| Dimensões mínimas | FR-4/Rogers/PTFE: 3 × 3 mm; bordas chapeadas ou casteladas: 10 × 10 mm; alumínio/cobre: 5 × 5 mm | Válido para espessuras ≥ 0,6 mm; abaixo disso exige revisão manual. A painelização é recomendada para placas pequenas. |
+| Tolerância dimensional | ±0,1 mm | ±0,1 mm (precisão) e ±0,2 mm (regular) no roteamento CNC; ±0,4 mm no corte em V. |
+| Espessura | 0,4–4,5 mm | FR-4 em 0,4/0,6/0,8/1,0/1,2/1,6/2,0 mm (2,5 mm ou mais apenas para placas de 12 camadas ou mais). |
+| Tolerância de espessura (≥ 1,0 mm) | ±10% | Ex.: placa de 1,6 mm → acabada entre 1,44 mm e 1,76 mm. |
+| Tolerância de espessura (< 1,0 mm) | ±0,1 mm | Ex.: placa de 0,8 mm → acabada entre 0,7 mm e 0,9 mm. |
+| Cobre acabado — camada externa | 2 camadas: 1/2/2,5/3,5/4,5 oz; multicamadas: 1/2 oz | — |
+| Cobre acabado — camada interna | 0,5/1/2 oz | 0,5 oz por padrão na camada interna. |
+| Máscara de solda | Verde, roxo, vermelho, amarelo, azul, branco e preto | Máscara LPI (*Liquid Photo Imageable*), a mais comum. A de tinta curada a calor aparece em placas de baixo custo e de um lado só. |
+| Acabamento de superfície | HASL (com e sem chumbo), ENIG, OSP | OSP não está disponível para FR-4 de face única, FPC e placas de alumínio; placas de alumínio aceitam apenas HASL. FR-4/HDI com 6 camadas ou mais, espessura ≤ 0,4 mm, alta frequência, núcleo de cobre e FPC não suportam HASL. |
 
 #### Perfuração
 
-**Característi** **Capacidade Descrição Padrões cas**
-
-|Diâmetro da broca|1 camada: 0,3 – 6,3 mm 2 camadas: 0,15 – 6,3 mm Multicamada s: 0,15 – 6,3 mm|Furos com diâmetro ≥ 6,3 mm são fresados por CNC a partir de um furo menor. O diâmetro mínimo da broca para PCBs de 2 ou mais camadas é de 0,15 mm (mais caro!) O diâmetro mínimo da broca para PCBs com núcleo de alumínio é de 0,65 mm O diâmetro mínimo da broca para PCBs com núcleo de cobre é de 1,0 mm||
-|---|---|---|---|
-|Tolerância Furos do tamanho do furo (revestido)|passantes: +0,13 / -0,08 mm Furos de|por exemplo, para o tamanho do furo de 0,6 mm, o tamanho do furo acabado entre 0,52 mm e 0,73 mm é aceitável.||
-
-||encaixe por pressão: ± 0,05 mm (somente placas ENIG multicamada s – mencione os furos específicos na observação do PCB)|||
-|---|---|---|---|
-|Tolerância do tamanho do furo (não revestido)|±0,2 mm|por exemplo, para o furo não revestido de 1,00 mm, o tamanho do furo acabado entre 0,80 mm e 1,20 mm é aceitável.||
-|Espessura média do revestimen to do furo|18μm|||
-|Vias Cegas/Ocult as|Não suportado|Atualmente não oferecemos suporte para Vias Cegas/Enterradas, somente furos passantes.||
-|Tamanho/ diâmetro mínimo do furo de passagem|0,15 mm / 0,25 mm|1 camada (somente NPTH): tamanho do furo de 0,3 mm / diâmetro de passagem de 0,5 mm 2 camadas: tamanho do furo de 0,15 mm / diâmetro da passagem de 0,25 mm Multicamadas: tamanho do furo de 0,15 mm / diâmetro||
-
-|||da via de 0,25 mm ① O diâmetro da via deve ser 0,1 mm (0,15 mm de preferência) maior que o tamanho do furo da via. ② Tamanho do furo de passagem mínimo preferido: 0,2 mm||
-|---|---|---|---|
-|Min. Furos não revestidos|0,50 mm|Por favor, desenhe NPTHs na camada mecânica ou mantenha-os afastados da camada.||
-|Slots banhados mínimos|0,5 mm|A largura mínima da ranhura revestida é de 0,5 mm, que é desenhada com uma almofada.||
-|Mín. Slots não banhados|1,0 mm|A largura mínima do slot não revestido é de 1,0 mm, desenhe o contorno do slot na camada mecânica (GM1 ou GKO)||
-|Por meio do espaçamen 0,2 mm to furo a furo||||
-|Espaçamen to entre furos de almofada|0,45 mm|||
-
-|Min. Buracos acastelados|0,60 mm|Furos castelados são meios- furos metalizados em bordas de PCB, comumente usados em placas-filha para serem soldadas em PCBs portadoras. ① Diâmetro do furo (Φ): ≥ 0,6 mm ② Furo até a borda da placa (L): ≥ 1 mm ≥ Furo a furo (D): ≥ 0,6 mm ④ Tamanho mínimo do PCB: 10 × 10 mm ⑤ Espessura mínima do PCB: 0,6 mm||
-|---|---|---|---|
-|Bordas Chapeadas|10 x 10 mm|Bordas revestidas são revestidas de cobre e tratadas com ENIG. HASL não é suportado. ① Tamanho mínimo do PCB: 10 × 10 mm ② Espessura mínima do PCB: 0,6 mm ③ São necessárias pelo menos 3 rupturas (mais para PCBs maiores) no revestimento da borda para conexões de aba de suporte||
-|Furos / Ranhuras retangularesuportado s|Não|Furos retangulares e ranhuras sem cantos arredondados não são suportados.||
+| Característica | Capacidade | Descrição |
+|---|---|---|
+| Diâmetro de broca | 1 camada: 0,3–6,3 mm; 2 camadas e multicamadas: 0,15–6,3 mm | Microvias de 0,1 mm apenas com espessura ≤ 1 mm e acabamento ENIG ou OSP. Furos ≥ 6,3 mm são roteados por CNC a partir de um furo menor. Diâmetro mínimo para 2 ou mais camadas: 0,1 mm (mais caro); núcleo de alumínio: 0,65 mm; núcleo de cobre: 1,0 mm. |
+| Tolerância do tamanho do furo | Furos passantes: +0,13/−0,08 mm; encaixe por pressão: ±0,05 mm (placas ENIG multicamadas, só furos circulares) | Ex.: furo de 0,6 mm → acabado entre 0,52 mm e 0,73 mm. Recomendado PTH ≥ 0,5 mm para evitar máscara ou estanho presos no furo. |
+| Espessura média do revestimento do furo | 18 µm | — |
+| Tolerância de posição do furo | ±0,075 mm | — |
+| Furo e diâmetro mínimo de via | 0,15/0,25 mm | 0,1/0,2 mm apenas com espessura ≤ 1 mm e ENIG/OSP. Uma camada (só NPTH): furo de 0,3 mm e via de 0,5 mm. O diâmetro da via deve ser 0,1 mm (0,15 mm de preferência) maior que o furo; furo mínimo preferido: 0,2 mm. |
+| Furos não metalizados (NPTH) mínimos | 0,50 mm | Desenhe os NPTH na camada mecânica ou na camada de *keep-out*. |
+| Largura mínima de rasgo metalizado | 2 camadas: 0,5 mm; multicamadas: 0,35 mm | O comprimento do rasgo deve ser ao menos 2 vezes a largura. |
+| Rasgo não metalizado mínimo | 1,0 mm | Desenhe o contorno do rasgo na camada mecânica (GM1 ou GKO). |
+| Tolerância do tamanho do rasgo | Metalizado: +0,13/−0,08 mm; não metalizado: ±0,2 mm | Rasgo metalizado é feito com broca; não metalizado, por CNC. |
+| Espaçamento furo a furo (vias) | 0,2 mm | — |
+| Espaçamento furo a furo (almofadas) | 0,45 mm | — |
+| Furos castelados mínimos | 0,5 mm | São meios-furos metalizados na borda da placa, usados em placas-filhas para soldar na placa-mãe. Diâmetro ≥ 0,5 mm; furo à borda ≥ 1 mm; furo a furo ≥ 0,5 mm; placa ≥ 10 × 10 mm; espessura ≥ 0,6 mm. |
+| Bordas chapeadas | 10 × 10 mm | Bordas com cobre e acabamento ENIG (HASL não é suportado). Placa ≥ 10 × 10 mm; espessura ≥ 0,6 mm; ao menos 3 rupturas no revestimento para as abas de suporte. |
+| Rasgos cegos | — | Largura ≥ 1,0 mm; profundidade ≥ 0,2 mm; anel ≥ 0,3 mm; distância de segurança ≥ 0,2 mm; espessura remanescente ≥ 0,2 mm. FR-4 de 2 a 32 camadas com espessura ≥ 0,8 mm. |
+| Backdrill | — | Furação secundária que controla a profundidade do furo e remove o cobre excedente, reduzindo a interferência no sinal. FR-4 de 4 a 32 camadas com espessura ≥ 0,8 mm. |
+| Furos e rasgos retangulares | Não suportado | Furos e rasgos retangulares sem cantos arredondados não são suportados. |
 
 #### Larguras
 
-**Característi** **Capacidade Descrição Padrões cas**
-
-|Largura mínima da 0,10 / 0,10 trilha e espaçamen mil) to (1 oz)|mm (4 / 4|1 e 2 camadas: 0,10 / 0,10 mm (4 / 4 mil) Multicamadas: 0,09 / 0,09 mm (3,5 / 3,5 mil). 3 mil é aceitável em fan-outs BGA.||
-|---|---|---|---|
-|Largura mínima da 0,16 / 0,16 trilha e espaçamen mil) to (2 oz) Tolerância da largura ±20% da via|mm (6,5 / 6,5|2 camadas: 0,16 / 0,16 mm (6,5 / 6,5 mil) Multicamadas: 0,16 / 0,20 mm (6,5 / 8 mil) por exemplo, para uma pista de 0,1 mm, a largura da pista finalizada varia de 0,08 a 0,12 mm.||
-|Anel anular PTH|≧0,20 mm|2 camadas: 1 oz: Recomendado 0,25 mm ou mais; mínimo absoluto 0,18 mm 2 oz: 0,254 mm ou mais Multicamadas: 1 oz: Recomendado 0,20 mm ou mais; mínimo absoluto 0,15 mm 2 oz: 0,254 mm ou mais||
-|Anel anular de almofada NPTH|≧0,45 mm|Recomendado 0,45 mm ou mais. Isso é para permitir que um anel de cobre de 0,2 mm seja removido ao redor do furo para a fixação do filme de vedação. Tamanhos de pastilhas menores que o valor recomendado podem resultar em um anel anular muito fino ou completamente ausente.||
-
-|BGA|0,25 mm|① Diâmetro da almofada BGA ≥ 0,25 mm ② Distância entre a pastilha BGA e o traço ≥ 0,1 mm (mín. 0,09 mm para placas multicamadas) ③ As vias podem ser colocadas dentro de pads BGA usando vias preenchidas e revestidas||
-|---|---|---|---|
-|Bobinas de rastreamen 0,15/0,15 mmLargura/folga mínima do to Largura e espaçamen 0,25 to da grade milímetros hachurada Espaçamen 0,25 mm to de trilhas na mesma rede||Largura/folga mínima do traço: 0,15/0,15 mm, quando os traços são cobertos por máscara de solda (1 onça). traço: 0,25/0,25 mm, quando os traços NÃO são cobertos por máscara de solda (1oz). Somente ENIG (alto risco de curto-circuito com HASL)||
-
-|Camada interna através do furo para folga de cobre|0,2 mm|||
-|---|---|---|---|
-|Folga do furo da almofada PTH da camada interna para cobre|0,3 mm|||
-|Folga da almofada para rastrear|0,1 mm|Mín. 0,1 mm (fique bem acima, se possível). Mín. 0,09 mm localmente para almofadas BGA||
-|Folga entre pads SMD (redes diferentes)|0,15 mm|Mais detalhes sobre o espaçamento dos pads SMD: Espaçamento mínimo dos componentes SMD||
-|Via buraco para pista|0,2 mm|||
-
-|PTH para rastrear|0,28 mm|0,35 mm é recomendado, mínimo 0,28 mm||
-|---|---|---|---|
-|NPTH para rastrear|0,2 mm|||
+| Característica | Capacidade | Descrição |
+|---|---|---|
+| Largura e espaçamento mínimos de trilha (1 oz) | 0,10/0,10 mm (4/4 mil) | 1 e 2 camadas: 0,10/0,10 mm. Multicamadas: 0,09/0,09 mm (3,5/3,5 mil); 3 mil é aceitável em *fan-out* de BGA. |
+| Largura e espaçamento mínimos de trilha (2 oz) | 0,16/0,16 mm (6,5/6,5 mil) | 2 camadas: 0,16/0,16 mm. Multicamadas: 0,15/0,15 mm (6/6 mil). |
+| Largura e espaçamento mínimos de trilha (2,5 oz) | 2 camadas: 0,2/0,2 mm (8/8 mil) | — |
+| Largura e espaçamento mínimos de trilha (3,5 oz) | 2 camadas: 0,25/0,25 mm (10/10 mil) | — |
+| Largura e espaçamento mínimos de trilha (4,5 oz) | 2 camadas: 0,3/0,3 mm (12/12 mil) | — |
+| Tolerância da largura da trilha | ±20% | Ex.: trilha de 0,1 mm → acabada entre 0,08 mm e 0,12 mm. |
+| Anel anular PTH | ≥ 0,20 mm | 2 camadas — 1 oz: recomendado 0,25 mm ou mais, mínimo absoluto 0,18 mm; 2 oz: 0,254 mm ou mais. Multicamadas — 1 oz: recomendado 0,20 mm ou mais, mínimo absoluto 0,15 mm; 2 oz: 0,254 mm ou mais. |
+| Anel anular de almofada NPTH | ≥ 0,45 mm | Recomendado 0,45 mm ou mais, para permitir remover 0,2 mm de cobre ao redor do furo e fixar o filme de vedação. Abaixo disso o anel pode ficar muito fino ou ausente. |
+| BGA | 0,2 mm | Almofada de 0,2 a 0,25 mm exige ENIG. Folga almofada–trilha ≥ 0,1 mm (mínimo 0,09 mm em multicamadas). Vias podem ficar dentro das almofadas BGA, preenchidas e cobertas. |
+| Bobinas de trilha (*trace coils*) | 0,15/0,15 mm | Largura/folga mínima de 0,15/0,15 mm com trilhas cobertas por máscara (1 oz) e de 0,25/0,25 mm sem cobertura (1 oz). Somente ENIG, pelo risco de curto com HASL. |
+| Grade hachurada — largura e espaçamento | 0,25 mm | — |
+| Espaçamento de trilhas de mesma rede | 0,25 mm | — |
+| Folga via–cobre na camada interna | 0,2 mm | — |
+| Folga furo de almofada PTH–cobre na camada interna | 0,3 mm | — |
+| Folga almofada–trilha (1 oz) | 0,1 mm | Mínimo 0,1 mm, ficando bem acima se possível; 0,09 mm localmente para almofadas BGA. |
+| Folga entre almofadas SMD (redes diferentes) | 0,15 mm | Almofada SMD mínima: 0,25 × 0,25 mm. |
+| Folga furo de via–trilha | 0,2 mm | — |
+| Folga PTH–trilha | 0,28 mm | Recomendado 0,35 mm; mínimo 0,28 mm. |
+| Folga NPTH–trilha | 0,2 mm | — |
 
 #### Máscara de solda
 
-**Característi** **Capacidade Descrição Padrões cas**
-
-|Expansão da máscara 0,038 mm de solda||2 camadas: expansão de 0,038 mm em cada lado de um pad. Mantenha pelo menos 0,05 mm de folga entre as aberturas da máscara de solda e os traços vizinhos. Multicamadas: Não requer expansão Nota: esta regra não entra em conflito com a folga mínima de 0,1 mm entre a almofada e a pista||
-|---|---|---|---|
-|Ponte de máscara de solda|0,10 mm|2 camadas (1 oz): Espaçamento mínimo entre as almofadas: 0,20 mm (verde, vermelho, amarelo, azul, roxo) Espaçamento mínimo entre as almofadas: 0,23 mm (preto, branco) Multicamadas (1 oz): Espaçamento mínimo entre as almofadas: 0,10 mm (verde, vermelho, amarelo, azul, roxo) Espaçamento mínimo entre as almofadas: 0,13 mm (preto, branco)||
-|Vias plugadas|Cheio de máscara de solda|As vias são preenchidas com máscara de solda para um acabamento opaco. Clique||
-
-|||para uma explicação detalhada ① As vias preenchidas não devem ter aberturas de máscara de solda em nenhum dos lados ② As vias preenchidas devem ter ≥ 0,35 mm de folga de outras aberturas da máscara de solda (por exemplo, almofadas) ③ As vias preenchidas não devem ter diâmetro maior que 0,5 mm||
-|---|---|---|---|
-|Processo JLCPCB Via- Pasta de in-Pad|Epóxi preenchido e ① As vias são preenchidas e coberto cobre preenchida e exigem alta condutividade tampada|As vias são preenchidas com resina epóxi ou pasta de cobre e então revestidas para obter um acabamento opaco e suave. Clique para uma explicação detalhada revestidas. Escolha o preenchimento de pasta de cobre para aplicações que térmica. ② Este processo é o padrão para placas multicamadas de 6 camadas ou mais. ③ Compatível com diâmetros de via de 0,15 a 0,5 mm.||
-|Constante dielétrica da máscara de solda|3.8|||
-
-Espessura da tinta da ≥ 10μm máscara de solda
+| Característica | Capacidade | Descrição |
+|---|---|---|
+| Expansão da máscara de solda | 1:1 | Equipamento LDI atualizado em junho de 2025: a abertura da máscara pode ter a mesma medida da almofada. Mantenha ao menos 0,09 mm de folga entre as aberturas da máscara e as trilhas vizinhas. |
+| Ponte de máscara de solda | 0,10 mm | 1 oz — espaçamento mínimo entre almofadas de 0,10 mm (verde, vermelho, amarelo, azul, roxo) e 0,13 mm (preto, branco). 2 oz — 0,20 mm em qualquer cor. |
+| Vias plugadas | Preenchidas com máscara de solda | Acabamento opaco. Vias preenchidas não podem ter abertura de máscara em nenhum dos lados, precisam de ≥ 0,35 mm de folga de outras aberturas e não podem passar de 0,5 mm de diâmetro. |
+| Via-in-pad (processo JLCPCB) | Epóxi preenchido e coberto; pasta de cobre preenchida e tampada | Vias preenchidas com resina epóxi ou pasta de cobre e depois cobertas, para acabamento opaco e liso. É o padrão para placas multicamadas de 6 camadas ou mais e é compatível com vias de 0,15 a 0,55 mm. |
+| Constante dielétrica da máscara de solda | 3,8 | — |
+| Espessura da tinta da máscara de solda | ≥ 10 µm | — |
 
 #### Lenda
 
-**Característic** **Capacidade Descrição Padrões as**
+| Característica | Capacidade | Descrição |
+|---|---|---|
 
-|Largura mínima da linha|6 mil (0,153 mm)|Caracteres com largura menor que 6 mil (0,153 mm) não poderão ser identificados.||
-|---|---|---|---|
-|Altura mínima do texto|40 mil (1,0 mm)|Caracteres com altura inferior a 40 mil (1,0 mm) não poderão ser identificados.||
-|Proporção entre largura e altura do caractere|1:6|A proporção preferida de largura e altura é 1:6.||
-|Proporção largura/altu ra do personage m esculpido em cavidade|1:6|A proporção preferida de largura para altura é 1:6||
-|Almofada para serigrafia|0,15 mm|A distância mínima entre a almofada e a serigrafia é de 0,15 mm.||
+| Largura mínima de linha | ≥ 0,15 mm (6 mil) | Caracteres com largura menor que 0,15 mm não são identificáveis. |
+| Altura mínima do texto | 1,0 mm (40 mil) | Caracteres com altura inferior a 1,0 mm não são identificáveis. |
+| Proporção largura/altura do caractere | 1:6 | Proporção preferida entre largura e altura. |
+| Proporção largura/altura (caractere vazado) | 1:6 | Proporção preferida entre largura e altura do caractere esculpido em cavidade. |
+| Almofada → serigrafia | 0,15 mm | Distância mínima entre a almofada e a serigrafia. |
 
 #### Contorno
 
-**Característi** **Capacidade Descrição Padrões cas**
-
-|Roteado|0,2 mm|① Folga de cobre das bordas da placa roteada: ≧0,2 mm ② Folga de cobre das ranhuras roteadas: ≧0,2 mm ③ Tolerância dimensional para bordas de placas roteadas: ±0,2 mm (precisão regular); ±0,1 mm (alta precisão)||
-|---|---|---|---|
-|Corte em V|0,4 mm|① Folga de cobre das bordas da placa cortada em V: ≧0,4 mm ② Tolerância de dimensão para bordas de placa cortadas em V: ±0,4 mm. Espessura do PCB ≥ 0,6 mm ③ Espaçamento de placa de painel zero por padrão. Alternativamente, corte em V ao longo de uma direção sem espaçamento e roteie ao longo da outra direção com espaçamento de placa de 1,6 ou 2 mm. ④ Dimensões mínimas do painel: 70 × 70 mm; dimensões máximas do painel: 475 × 475 mm ⑤ Ângulo da ranhura em V: 25°||
-
-① Folga de cobre das bordas da placa não-mouse-bite: ≧0,2 mm ② Tolerância de dimensão para bordas de placa não- mouse-bite: ±0,2 mm (precisão regular); ±0,1 mm (alta precisão) ③ Espaçamento do painel: 1,6 ou 2 mm ④ As bordas serrilhadas permanecerão após a despanelização ⑤ Largura mínima da aresta de ferramenta: 3 mm.
-
-|Painel de|Para montagem SMT no|
-|---|---|
-|mordidas|JLCPCB, use arestas de|
-|de rato|ferramenta de 5 mm, furos|
-
-0,2 mm
-
-de ferramenta de 2 mm e fiduciais de 1 mm centralizados a 3,85 mm das arestas do painel. ⑥ O diâmetro recomendado da mordida do mouse é de 0,5 mm a 0,8 mm; A distância recomendada entre as duas mordidas do mouse é de 0,2 a 0,3 mm. A largura mínima da aba de separação é de 4 mm. Para separação com mordidas do mouse, a largura mínima é de 5 mm.
-
-|Panelizaçã o com espaço|2mm|O espaçamento entre as placas deve ser ≥ 2 mm, pois espaçamentos estreitos resultam em dificuldades de roteamento e corte em V.||
-|---|---|---|---|
-|Painel de PCBs Circulares|≥20mmx20 mm|O tamanho da placa redonda única deve ser ≥20 mm x 20 mm ao escolher o painel da JLCPCB. Painéis com furos de carimbo e adicione tiras de ferramentas em quatro bordas da placa||
+| Característica | Capacidade | Descrição |
+|---|---|---|
+| Roteado | 0,2 mm | Folga de cobre das bordas roteadas: ≥ 0,2 mm; folga de cobre das ranhuras roteadas: ≥ 0,2 mm; tolerância dimensional das bordas roteadas: ±0,2 mm (precisão regular) e ±0,1 mm (alta precisão). |
+| Corte em V (*V-cut*) | 0,4 mm | Folga de cobre das bordas: ≥ 0,4 mm; tolerância dimensional: ±0,4 mm, com espessura de PCB ≥ 0,6 mm; dimensões do painel: de 70 × 70 mm a 475 × 475 mm; ângulo da ranhura: 25°; espaçamento mínimo entre dois cortes em V: 2 mm (3 mm recomendado). |
+| Painel com mordidas (*mouse bites*) | 0,2 mm | Folga de cobre das bordas: ≥ 0,2 mm; tolerância dimensional: ±0,2 mm (regular) e ±0,1 mm (alta precisão); espaçamento entre placas: 1,6 ou 2 mm; largura mínima da aresta de ferramenta: 3 mm (5 mm para montagem SMT na JLCPCB); diâmetro recomendado da mordida: 0,5 a 0,8 mm, com 0,2 a 0,3 mm entre mordidas. |
+| Painelização com espaçamento | 2 mm | O espaçamento entre as placas deve ser ≥ 2 mm: espaçamentos estreitos dificultam o roteamento e o corte em V. |
+| Painel de PCBs circulares | ≥ 20 × 20 mm | O tamanho da placa redonda individual deve ser ≥ 20 × 20 mm ao usar a painelização da JLCPCB. |
 
 
 # Diversos projetos feitos com KiCAD
@@ -925,7 +934,7 @@ ANAVI pHAT infravermelho Leon Anavi ANAVI Infrared pHAT é uma placa adicional q
 ![Figura 35: ANAVI Light pHAT é uma placa add-on Raspberry Pi para controlar tiras de LED RGB de 12 V](figuras/figura-35.png)
 
 
-ANAVI pHAT leve Leon Anavi ANAVI Light pHAT é uma placa add- on Raspberry Pi para controlar tiras de LED RGB de 12 V. Além disso, tem três slots para módulos de sensor I2C, slot para sensor de movimento PIR, pinos UART para depuração e EEPROM com informações do fabricante da placa.
+ANAVI pHAT leve Leon Anavi ANAVI Light pHAT é uma placa add-on Raspberry Pi para controlar tiras de LED RGB de 12 V. Além disso, tem três slots para módulos de sensor I2C, slot para sensor de movimento PIR, pinos UART para depuração e EEPROM com informações do fabricante da placa.
 
 
 ![Figura 36: controlador de motor de uso geral projetado com kicad em torno do microcontrolador ATmega328 e driver de motor L298P](figuras/figura-36.png)
@@ -991,10 +1000,7 @@ Quadro Suculento Laboratórios plugg.ee JuicyBoard do plugg.ee Labs é uma plata
 ![Figura 47: LABDOS-espectrômetro de radiação ionizante](figuras/figura-47.png)
 
 
-LABDOS-espectrômetro de radiação ionizante baseado em semicondutores Tecnologias Científicas Universais sro (UST) LABDOS01 é um espectrômetro- dosímetro de código aberto baseado em um diodo PIN de silício e é destinado a pesquisas científicas e propósitos experimentais. Uma porta USB-C ou conector JST-GH protege a energia e a comunicação. O dispositivo pode ser usado estaticamente (localizado em um local específico, por exemplo, laboratório ou base) ou em aplicações móveis (como carros ou UAVs). O espectrômetro é alojado em uma caixa impressa em 3D, que traz resistência mecânica essencial e permite o desenvolvimento futuro de
-
-
-gabinetes de usuário e novas integrações. O objetivo do LABDOS01 é criar um dispositivo de medição de código aberto, acessível, de alta qualidade, confiável e simples — um espectrômetro de energia de radiação para a comunidade científica.
+LABDOS-espectrômetro de radiação ionizante baseado em semicondutores Tecnologias Científicas Universais sro (UST) LABDOS01 é um espectrômetro-dosímetro de código aberto baseado em um diodo PIN de silício e é destinado a pesquisas científicas e propósitos experimentais. Uma porta USB-C ou conector JST-GH protege a energia e a comunicação. O dispositivo pode ser usado estaticamente (localizado em um local específico, por exemplo, laboratório ou base) ou em aplicações móveis (como carros ou UAVs). O espectrômetro é alojado em uma caixa impressa em 3D, que traz resistência mecânica essencial e permite o desenvolvimento futuro de gabinetes de usuário e novas integrações. O objetivo do LABDOS01 é criar um dispositivo de medição de código aberto, acessível, de alta qualidade, confiável e simples — um espectrômetro de energia de radiação para a comunidade científica.
 
 ![Figura 48: NUCO-V-placa de desenvolvimento compatível com NUCLEO-64© para as séries STM32F7 e STM32H7 com Black Magic Probe integrado](figuras/figura-48.png)
 
@@ -1122,9 +1128,12 @@ dependem de impedância consistente para evitar falhas.
 
 A USB será utilizada como exemplo para o entendimento de como realizar o controle de impedância.
 
-::: {.quadro tipo="importante" titulo="Impedância do par diferencial USB"} O **USB 2.0** exige **90 Ω ±15%** no par diferencial. O valor de **±10%** que aparece em calculadoras de fabricante é a *tolerância de fabricação* da impedância controlada — a JLCPCB, por exemplo, declara ±10% — e não o requisito da interface. Ao criar a classe de rede no KiCAD, use o valor e a tolerância da interface que está sendo roteada.
+::: {.quadro tipo="importante" titulo="Impedância do par diferencial USB"}
+O **USB 2.0** exige **90 Ω ±15%** no par diferencial. O valor de **±10%** que aparece em calculadoras de fabricante é a *tolerância de fabricação* da impedância controlada — a JLCPCB, por exemplo, declara ±10% — e não o requisito da interface. Ao criar a classe de rede no KiCAD, use o valor e a tolerância da interface que está sendo roteada.
 
-*Fontes: Texas Instruments, "USB layout basics"; JLCPCB, "PCB Manufacturing & Assembly Capabilities" (consultado em 2026-09-29).* :::
+*Fontes: Texas Instruments, "USB layout basics"; JLCPCB, "PCB Manufacturing & Assembly Capabilities" (consultado em 2026-09-29).*
+
+:::
 
 **1.. PASSO** Previamente, no editor do esquemático, é necessário identificar com Label as trilhas que terão controle de impedância. Observe os dois exemplos das figuras onde as trilhas são identificadas com USB_D+ e USB_D- e no segundo exemplo classe DP_90R com rótulos pertencentes DP e DN. Os Label’s do par diferencial devem fazer parte de uma classe de rede que terão o controle de impedância. No KiCAD a identificação dos rótulos dias vias diferenciais deve ser finalizadas com +/- ou P/N.
 
@@ -1168,22 +1177,16 @@ Pode-se também realizar o acesso pelo link contido na página de compatibilidad
 
 
 
-No site da JLC página do controle de impedância, obtenha a contante dielétrica do tipo de material Prepeg 7628 que corresponde a 4,4.
-
-*Figura 68: Constantes dielétricas obtidas na páginas de controle de impedância do*
-
-*JLCPCB*
+No site da JLCPCB, na página de controle de impedância, obtenha a constante dielétrica do material prepreg 7628, que corresponde a 4,4.
 
 ![Figura 67: Estrutura com parâmetros para o controle de impedância](figuras/figura-67.png)
 
 
-![Figura 68: Constantes dielétricas obtidas na páginas de controle de impedância do JLCPCB](figuras/figura-68.png)
+![Figura 68: Constantes dielétricas obtidas nas páginas de controle de impedância do JLCPCB](figuras/figura-68.png)
 
 
 
-*Figura 67: Estrutura com parâmetros para o controle de impedância.*
-
-Além da constante dielétrica obtenha a altura do material Prepeg 7628 (0,21040mm) conforme a figura anterior. Inclua na calculadora a distância entre trilhas (0,2 mm em Trace Separation (S) ( mm )) valor obtido na configuração da placa classe de rede DP_90R.
+Além da constante dielétrica obtenha a altura do material prepreg 7628 (0,21040 mm) conforme a figura anterior. Inclua na calculadora a distância entre trilhas (0,2 mm em Trace Separation (S) ( mm )) valor obtido na configuração da placa classe de rede DP_90R.
 
 ![Figura 69: Parâmetros da classe DP_90R](figuras/figura-69.png)
 
@@ -1199,7 +1202,7 @@ Após selecionar a unidade para mm, preencher os parâmetros:
 
 #### Altura do dielétrico: 0,2104 mm
 
-Constante dielétrica para o material Prepeg 7628: 4,4
+Constante dielétrica para o material prepreg 7628: 4,4
 
 #### Separação entre trilhas: 0,2 mm
 
@@ -1304,9 +1307,7 @@ No exemplo do circuito pode-se observar alguns elementos importantes:
 
 ## Saída digitais a Rele
 
-Esse tipo de saída é bem versátil, pois pode comutar tanto cargas em corrente contínua (C.C.) quanto em corrente alternada (C.A.). No entanto, as saídas a relé apresentam desgaste mecânico proporcional ao número de chaveamentos e à
-
-corrente que passa pelos contatos. Para aumentar a vida útil do relé, pode-se utilizar um relé auxiliar externo, inserindo-o entre a saída do esquemático e a carga, ou ainda, intercalar um relé de maior potência ou uma chave estática, o que ajuda a "proteger" os contatos do relé interno. As saídas a relé geralmente têm um tempo de resposta mais lento quando comparadas às saídas a transistor ou a TRIAC. A figura a seguir ilustra o circuito de uma saída com contato seco ou relé.
+Esse tipo de saída é bem versátil, pois pode comutar tanto cargas em corrente contínua (C.C.) quanto em corrente alternada (C.A.). No entanto, as saídas a relé apresentam desgaste mecânico proporcional ao número de chaveamentos e à corrente que passa pelos contatos. Para aumentar a vida útil do relé, pode-se utilizar um relé auxiliar externo, inserindo-o entre a saída do esquemático e a carga, ou ainda, intercalar um relé de maior potência ou uma chave estática, o que ajuda a "proteger" os contatos do relé interno. As saídas a relé geralmente têm um tempo de resposta mais lento quando comparadas às saídas a transistor ou a TRIAC. A figura a seguir ilustra o circuito de uma saída com contato seco ou relé.
 
 ![Figura 83: Exemplo esquemático para saída digital com acionamento de carga CA ou CC](figuras/figura-83.png)
 

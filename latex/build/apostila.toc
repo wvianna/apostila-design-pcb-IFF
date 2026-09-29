@@ -8,102 +8,107 @@
 \contentsline {subsection}{\numberline {2.2.1}Substrato}{2}{subsection.2.2.1}%
 \contentsline {subsection}{\numberline {2.2.2}Cobre}{3}{subsection.2.2.2}%
 \contentsline {subsection}{\numberline {2.2.3}Máscara de solda}{3}{subsection.2.2.3}%
-\contentsline {subsection}{\numberline {2.2.4}Camada de serigrafia}{4}{subsection.2.2.4}%
-\contentsline {subsection}{\numberline {2.2.5}Acabamento de superfície}{5}{subsection.2.2.5}%
-\contentsline {subsubsection}{ENEPIG (Electroless Nickel Electroless}{12}{section*.15}%
-\contentsline {subsubsection}{Palladium Immersion Gold)}{12}{section*.16}%
-\contentsline {section}{\numberline {2.3}Categorias de PCBs}{14}{section.2.3}%
-\contentsline {chapter}{\numberline {3}Boas Práticas de Design}{15}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Planejamento Inicial}{15}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Planejamento do Design}{16}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Separação de Áreas Funcionais}{16}{section.3.3}%
-\contentsline {section}{\numberline {3.4}Largura de Trilhas e Distância Mínima}{17}{section.3.4}%
-\contentsline {section}{\numberline {3.5}Gerenciamento Térmico}{17}{section.3.5}%
-\contentsline {section}{\numberline {3.6}Trilhas de Alimentação}{18}{section.3.6}%
-\contentsline {section}{\numberline {3.7}Planos de Terra}{18}{section.3.7}%
-\contentsline {section}{\numberline {3.8}Minimização de Interferências}{20}{section.3.8}%
-\contentsline {section}{\numberline {3.9}Otimização de Pads e Vias}{21}{section.3.9}%
-\contentsline {section}{\numberline {3.10}Simplificação do Layout}{21}{section.3.10}%
-\contentsline {section}{\numberline {3.11}Serigrafia Clara e Informativa}{21}{section.3.11}%
-\contentsline {section}{\numberline {3.12}Considerações de Fabricação}{21}{section.3.12}%
-\contentsline {section}{\numberline {3.13}Testabilidade}{22}{section.3.13}%
-\contentsline {section}{\numberline {3.14}Ligação das E/S do MCU com os conectores}{22}{section.3.14}%
-\contentsline {chapter}{\numberline {4}Processo básico de fabricação de PCB}{23}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Etapa fotográfica para criação do padrão de trilhas}{23}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Utilização de foto-resistente e máscara fotográfica}{23}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Etapa de corrosão do cobre com cloreto férrico}{23}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Alternativas: Fresagem CNC e serigrafia com tintas resistentes à corrosão}{23}{section.4.4}%
-\contentsline {section}{\numberline {4.5}Furos e vias na PCB}{24}{section.4.5}%
-\contentsline {subsection}{\numberline {4.5.1}Conexão entre camadas e montagem de componentes}{24}{subsection.4.5.1}%
-\contentsline {subsection}{\numberline {4.5.2}Perfuração controlada numericamente (CNC) a partir de dados do software CAD}{24}{subsection.4.5.2}%
-\contentsline {subsection}{\numberline {4.5.3}Vias cegas ou microvias: conexões internas entre camadas}{24}{subsection.4.5.3}%
-\contentsline {subsection}{\numberline {4.5.4}Redução do número de tamanhos de furos para diminuir custos}{24}{subsection.4.5.4}%
-\contentsline {section}{\numberline {4.6}Revestimento de solda e resistência à solda}{25}{section.4.6}%
-\contentsline {subsection}{\numberline {4.6.1}Proteção de áreas não-soldadas por meio de resistência à solda}{25}{subsection.4.6.1}%
-\contentsline {subsection}{\numberline {4.6.2}Estanho ou ouro para facilitar a soldagem de componentes}{25}{subsection.4.6.2}%
-\contentsline {section}{\numberline {4.7}Serigrafia na PCB}{25}{section.4.7}%
-\contentsline {subsection}{\numberline {4.7.1}Impressão de textos e identificadores na placa}{25}{subsection.4.7.1}%
-\contentsline {subsection}{\numberline {4.7.2}Auxílio na identificação e localização de componentes}{26}{subsection.4.7.2}%
-\contentsline {subsection}{\numberline {4.7.3}Uso de tela de seda gerada pelo software de design de PCB}{26}{subsection.4.7.3}%
-\contentsline {chapter}{\numberline {5}Protótipo de PCB}{27}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Importância da criação de protótipos antes da produção em massa}{27}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Possíveis diferenças no processo de fabricação do protótipo}{27}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Recomendação de manter o processo do protótipo próximo ao processo final}{27}{section.5.3}%
-\contentsline {chapter}{\numberline {6}Opções de ``EDA'' - ``Electronic Design Automation'' (Automação de Design Eletrônico)}{29}{chapter.6}%
-\contentsline {chapter}{\numberline {7}KiCad}{30}{chapter.7}%
-\contentsline {subsubsection}{As principais funcionalidades do KiCad incluem:}{30}{section*.26}%
-\contentsline {section}{\numberline {7.1}Motivos para usar o Kicad}{31}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Instalação do KiCAD}{31}{section.7.2}%
-\contentsline {section}{\numberline {7.3}Usando o gerenciador de projetos KiCad}{32}{section.7.3}%
-\contentsline {section}{\numberline {7.4}Arquivos e pastas KiCad}{32}{section.7.4}%
-\contentsline {subsection}{\numberline {7.4.1}Arquivos de projeto}{33}{subsection.7.4.1}%
-\contentsline {subsubsection}{Arquivos do editor esquemático}{33}{section*.28}%
-\contentsline {subsubsection}{Arquivos e pastas do editor de PCB}{33}{section*.29}%
-\contentsline {subsubsection}{Arquivos de fabricação e documentação}{34}{section*.30}%
-\contentsline {subsection}{\numberline {7.4.2}Armazenando e enviando arquivos KiCad}{34}{subsection.7.4.2}%
-\contentsline {section}{\numberline {7.5}Workflow do Kicad}{34}{section.7.5}%
-\contentsline {subsection}{\numberline {7.5.1}Esquemático (Schematic):}{35}{subsection.7.5.1}%
-\contentsline {subsection}{\numberline {7.5.2}Associação de Footprints (Assigning Footprints):}{36}{subsection.7.5.2}%
-\contentsline {subsection}{\numberline {7.5.3}Layout da PCB (PCB Layout):}{36}{subsection.7.5.3}%
-\contentsline {subsection}{\numberline {7.5.4}Visualização 3D (3D Visualization):}{36}{subsection.7.5.4}%
-\contentsline {subsection}{\numberline {7.5.5}Verificação do Design (Design Verification):}{36}{subsection.7.5.5}%
-\contentsline {subsection}{\numberline {7.5.6}Geração dos Arquivos de Fabricação (Manufacturing Files):}{36}{subsection.7.5.6}%
-\contentsline {section}{\numberline {7.6}Importação e utilização de bibliotecas de componentes no KiCad}{36}{section.7.6}%
-\contentsline {subsubsection}{As bibliotecas são:}{36}{section*.32}%
-\contentsline {subsection}{\numberline {7.6.1}Utilização de novas bibliotecas}{39}{subsection.7.6.1}%
-\contentsline {section}{\numberline {7.7}Principais teclas de atalho}{42}{section.7.7}%
-\contentsline {subsection}{\numberline {7.7.1}Editor de Esquemáticos (Eeschema)}{42}{subsection.7.7.1}%
-\contentsline {subsection}{\numberline {7.7.2}Editor de PCB (Pcbnew)}{43}{subsection.7.7.2}%
-\contentsline {subsection}{\numberline {7.7.3}Teclas Globais}{43}{subsection.7.7.3}%
-\contentsline {subsubsection}{Tecla de}{43}{section*.38}%
-\contentsline {subsubsection}{Descrição}{43}{section*.39}%
-\contentsline {subsubsection}{Atalho}{43}{section*.40}%
-\contentsline {subsubsection}{Tecla de}{44}{section*.41}%
-\contentsline {subsubsection}{Descrição}{44}{section*.42}%
-\contentsline {subsubsection}{Atalho}{44}{section*.43}%
-\contentsline {section}{\numberline {7.8}Compatibilidade do Design da PCB para fabricação}{44}{section.7.8}%
-\contentsline {subsubsection}{Especificações do PCB}{45}{section*.45}%
-\contentsline {subsubsection}{Perfuração}{46}{section*.46}%
-\contentsline {subsubsection}{Larguras}{48}{section*.47}%
-\contentsline {subsubsection}{Máscara de solda}{49}{section*.48}%
-\contentsline {subsubsection}{Lenda}{51}{section*.49}%
-\contentsline {subsubsection}{Contorno}{51}{section*.50}%
-\contentsline {chapter}{\numberline {8}Diversos projetos feitos com KiCAD}{53}{chapter.8}%
-\contentsline {subsubsection}{Dosímetros SPACEDOS}{76}{section*.75}%
-\contentsline {chapter}{\numberline {9}Controle de impedância em circuitos de alta frequência}{81}{chapter.9}%
-\contentsline {section}{\numberline {9.1}Importância do controle de impedância}{81}{section.9.1}%
-\contentsline {section}{\numberline {9.2}Exemplos de casos onde é necessário o controle de impedância}{81}{section.9.2}%
-\contentsline {section}{\numberline {9.3}Consequências da Falta de Controle de Impedância}{82}{section.9.3}%
-\contentsline {section}{\numberline {9.4}Controle de impedância com Kicad}{82}{section.9.4}%
-\contentsline {subsubsection}{Acesse \url {https://jlcpcb.com/pt/impedance}}{84}{section*.84}%
-\contentsline {subsubsection}{Troque a unidade para mm.}{87}{section*.88}%
-\contentsline {subsubsection}{Altura do dielétrico: 0,2104 mm}{89}{section*.94}%
-\contentsline {subsubsection}{Separação entre trilhas: 0,2 mm}{90}{section*.95}%
-\contentsline {subsubsection}{Impedância alvo: 90 ohms}{90}{section*.96}%
-\contentsline {chapter}{\numberline {10}Circuitos para interfaceamento de entrada e saída digital com microcontrolador}{96}{chapter.10}%
-\contentsline {section}{\numberline {10.1}Entradas digitais em C.C.}{96}{section.10.1}%
-\contentsline {section}{\numberline {10.2}Entradas digitais em C.A.}{97}{section.10.2}%
-\contentsline {section}{\numberline {10.3}Saída digitais em C.C.}{97}{section.10.3}%
-\contentsline {section}{\numberline {10.4}Saída digitais em C.A. com TRIAC}{98}{section.10.4}%
-\contentsline {section}{\numberline {10.5}Saída digitais a Rele}{99}{section.10.5}%
-\contentsline {chapter}{Referências WEB}{100}{chapter*.109}%
+\contentsline {subsection}{\numberline {2.2.4}Camada de serigrafia}{3}{subsection.2.2.4}%
+\contentsline {subsection}{\numberline {2.2.5}Acabamento de superfície}{4}{subsection.2.2.5}%
+\contentsline {subsubsection}{ENEPIG (Electroless Nickel Electroless}{11}{figure.caption.14}%
+\contentsline {subsubsection}{Palladium Immersion Gold)}{11}{figure.caption.14}%
+\contentsline {section}{\numberline {2.3}Normas IPC}{13}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}O que é a IPC}{13}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}As classes de qualidade}{14}{subsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.3.3}Como escolher a classe}{14}{subsection.2.3.3}%
+\contentsline {subsection}{\numberline {2.3.4}Onde a IPC aparece na prática}{14}{subsection.2.3.4}%
+\contentsline {section}{\numberline {2.4}Categorias de PCBs}{15}{section.2.4}%
+\contentsline {chapter}{\numberline {3}Boas Práticas de Design}{16}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Planejamento Inicial}{16}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Planejamento do Design}{17}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Separação de Áreas Funcionais}{17}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Largura de Trilhas e Distância Mínima}{18}{section.3.4}%
+\contentsline {section}{\numberline {3.5}Gerenciamento Térmico}{18}{section.3.5}%
+\contentsline {section}{\numberline {3.6}Trilhas de Alimentação}{19}{section.3.6}%
+\contentsline {section}{\numberline {3.7}Planos de Terra}{19}{section.3.7}%
+\contentsline {section}{\numberline {3.8}Minimização de Interferências}{22}{section.3.8}%
+\contentsline {section}{\numberline {3.9}Otimização de Pads e Vias}{23}{section.3.9}%
+\contentsline {section}{\numberline {3.10}Simplificação do Layout}{23}{section.3.10}%
+\contentsline {section}{\numberline {3.11}Serigrafia Clara e Informativa}{23}{section.3.11}%
+\contentsline {section}{\numberline {3.12}Considerações de Fabricação}{24}{section.3.12}%
+\contentsline {section}{\numberline {3.13}Testabilidade}{24}{section.3.13}%
+\contentsline {section}{\numberline {3.14}Ligação das E/S do MCU com os conectores}{24}{section.3.14}%
+\contentsline {chapter}{\numberline {4}Processo básico de fabricação de PCB}{25}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Etapa fotográfica para criação do padrão de trilhas}{25}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Utilização de foto-resistente e máscara fotográfica}{25}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Etapa de corrosão do cobre com cloreto férrico}{25}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Alternativas: Fresagem CNC e serigrafia com tintas resistentes à corrosão}{25}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Furos e vias na PCB}{26}{section.4.5}%
+\contentsline {subsection}{\numberline {4.5.1}Conexão entre camadas e montagem de componentes}{26}{subsection.4.5.1}%
+\contentsline {subsection}{\numberline {4.5.2}Perfuração controlada numericamente (CNC) a partir de dados do software CAD}{26}{subsection.4.5.2}%
+\contentsline {subsection}{\numberline {4.5.3}Vias cegas ou microvias: conexões internas entre camadas}{26}{subsection.4.5.3}%
+\contentsline {subsection}{\numberline {4.5.4}Redução do número de tamanhos de furos para diminuir custos}{26}{subsection.4.5.4}%
+\contentsline {section}{\numberline {4.6}Revestimento de solda e resistência à solda}{26}{section.4.6}%
+\contentsline {subsection}{\numberline {4.6.1}Proteção de áreas não-soldadas por meio de resistência à solda}{27}{subsection.4.6.1}%
+\contentsline {subsection}{\numberline {4.6.2}Estanho ou ouro para facilitar a soldagem de componentes}{27}{subsection.4.6.2}%
+\contentsline {section}{\numberline {4.7}Serigrafia na PCB}{27}{section.4.7}%
+\contentsline {subsection}{\numberline {4.7.1}Impressão de textos e identificadores na placa}{27}{subsection.4.7.1}%
+\contentsline {subsection}{\numberline {4.7.2}Auxílio na identificação e localização de componentes}{27}{subsection.4.7.2}%
+\contentsline {subsection}{\numberline {4.7.3}Uso de tela de seda gerada pelo software de design de PCB}{28}{subsection.4.7.3}%
+\contentsline {chapter}{\numberline {5}Protótipo de PCB}{29}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Importância da criação de protótipos antes da produção em massa}{29}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Possíveis diferenças no processo de fabricação do protótipo}{29}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Recomendação de manter o processo do protótipo próximo ao processo final}{29}{section.5.3}%
+\contentsline {chapter}{\numberline {6}Opções de ``EDA'' - ``Electronic Design Automation'' (Automação de Design Eletrônico)}{31}{chapter.6}%
+\contentsline {chapter}{\numberline {7}KiCad}{32}{chapter.7}%
+\contentsline {subsubsection}{As principais funcionalidades do KiCad incluem:}{32}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Motivos para usar o Kicad}{32}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Instalação do KiCAD}{33}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Usando o gerenciador de projetos KiCad}{33}{section.7.3}%
+\contentsline {section}{\numberline {7.4}Arquivos e pastas KiCad}{34}{section.7.4}%
+\contentsline {subsection}{\numberline {7.4.1}Arquivos de projeto}{34}{subsection.7.4.1}%
+\contentsline {subsubsection}{Arquivos do editor esquemático}{35}{subsection.7.4.1}%
+\contentsline {subsubsection}{Arquivos e pastas do editor de PCB}{35}{subsection.7.4.1}%
+\contentsline {subsubsection}{Arquivos de fabricação e documentação}{36}{table.7.1}%
+\contentsline {subsection}{\numberline {7.4.2}Armazenando e enviando arquivos KiCad}{36}{subsection.7.4.2}%
+\contentsline {section}{\numberline {7.5}Workflow do Kicad}{36}{section.7.5}%
+\contentsline {subsection}{\numberline {7.5.1}Esquemático (Schematic):}{37}{subsection.7.5.1}%
+\contentsline {subsection}{\numberline {7.5.2}Associação de Footprints (Assigning Footprints):}{37}{subsection.7.5.2}%
+\contentsline {subsection}{\numberline {7.5.3}Layout da PCB (PCB Layout):}{38}{subsection.7.5.3}%
+\contentsline {subsection}{\numberline {7.5.4}Visualização 3D (3D Visualization):}{38}{subsection.7.5.4}%
+\contentsline {subsection}{\numberline {7.5.5}Verificação do Design (Design Verification):}{38}{subsection.7.5.5}%
+\contentsline {subsection}{\numberline {7.5.6}Geração dos Arquivos de Fabricação (Manufacturing Files):}{38}{subsection.7.5.6}%
+\contentsline {section}{\numberline {7.6}Importação e utilização de bibliotecas de componentes no KiCad}{38}{section.7.6}%
+\contentsline {subsubsection}{As bibliotecas são:}{38}{section.7.6}%
+\contentsline {subsection}{\numberline {7.6.1}Utilização de novas bibliotecas}{41}{subsection.7.6.1}%
+\contentsline {section}{\numberline {7.7}Principais teclas de atalho}{44}{section.7.7}%
+\contentsline {subsection}{\numberline {7.7.1}Editor de Esquemáticos (Eeschema)}{44}{subsection.7.7.1}%
+\contentsline {subsection}{\numberline {7.7.2}Editor de PCB (Pcbnew)}{45}{subsection.7.7.2}%
+\contentsline {subsection}{\numberline {7.7.3}Teclas Globais}{45}{subsection.7.7.3}%
+\contentsline {subsubsection}{Tecla de}{45}{subsection.7.7.3}%
+\contentsline {subsubsection}{Descrição}{45}{subsection.7.7.3}%
+\contentsline {subsubsection}{Atalho}{45}{subsection.7.7.3}%
+\contentsline {subsubsection}{Tecla de}{45}{table.7.5}%
+\contentsline {subsubsection}{Descrição}{45}{table.7.5}%
+\contentsline {subsubsection}{Atalho}{46}{table.7.5}%
+\contentsline {section}{\numberline {7.8}Compatibilidade do Design da PCB para fabricação}{46}{section.7.8}%
+\contentsline {subsubsection}{Especificações do PCB}{47}{figure.caption.31}%
+\contentsline {subsubsection}{Perfuração}{48}{table.7.6}%
+\contentsline {subsubsection}{Larguras}{49}{table.7.7}%
+\contentsline {subsubsection}{Máscara de solda}{50}{table.7.8}%
+\contentsline {subsubsection}{Lenda}{50}{table.7.9}%
+\contentsline {subsubsection}{Contorno}{51}{table.7.10}%
+\contentsline {chapter}{\numberline {8}Diversos projetos feitos com KiCAD}{52}{chapter.8}%
+\contentsline {subsubsection}{Dosímetros SPACEDOS}{74}{figure.caption.55}%
+\contentsline {chapter}{\numberline {9}Controle de impedância em circuitos de alta frequência}{79}{chapter.9}%
+\contentsline {section}{\numberline {9.1}Importância do controle de impedância}{79}{section.9.1}%
+\contentsline {section}{\numberline {9.2}Exemplos de casos onde é necessário o controle de impedância}{79}{section.9.2}%
+\contentsline {section}{\numberline {9.3}Consequências da Falta de Controle de Impedância}{80}{section.9.3}%
+\contentsline {section}{\numberline {9.4}Controle de impedância com Kicad}{80}{section.9.4}%
+\contentsline {subsubsection}{Acesse \url {https://jlcpcb.com/pt/impedance}}{82}{figure.caption.63}%
+\contentsline {subsubsection}{Troque a unidade para mm.}{85}{figure.caption.66}%
+\contentsline {subsubsection}{Altura do dielétrico: 0,2104 mm}{87}{figure.caption.71}%
+\contentsline {subsubsection}{Separação entre trilhas: 0,2 mm}{87}{figure.caption.71}%
+\contentsline {subsubsection}{Impedância alvo: 90 ohms}{88}{figure.caption.71}%
+\contentsline {chapter}{\numberline {10}Circuitos para interfaceamento de entrada e saída digital com microcontrolador}{94}{chapter.10}%
+\contentsline {section}{\numberline {10.1}Entradas digitais em C.C.}{94}{section.10.1}%
+\contentsline {section}{\numberline {10.2}Entradas digitais em C.A.}{95}{section.10.2}%
+\contentsline {section}{\numberline {10.3}Saída digitais em C.C.}{95}{section.10.3}%
+\contentsline {section}{\numberline {10.4}Saída digitais em C.A. com TRIAC}{96}{section.10.4}%
+\contentsline {section}{\numberline {10.5}Saída digitais a Rele}{97}{section.10.5}%
+\contentsline {chapter}{Referências WEB}{98}{chapter*.84}%
