@@ -248,22 +248,39 @@ com 25 % cada; para larguras proporcionais é preciso variar os traços:
 |:---------|:-----------------------|:-------------------------|
 ```
 
-### Cores dos títulos
+### Cores e elementos gráficos
 
-O esquema usa quatro tons de azul (`xcolor` + `titlesec`), do mais escuro no
-capítulo ao mais claro na subsubseção, para reforçar a hierarquia:
+O esquema usa quatro tons de azul (`xcolor`), do mais escuro no capítulo ao mais
+claro na subsubseção, para reforçar a hierarquia:
 
-| Nível | Cor |
+| Elemento | Cor |
 |---|---|
+| Capa: título | `#10305A` |
 | Capítulo | `#10305A` |
 | Seção | `#1A4A85` |
 | Subseção | `#2A63A8` |
 | Subsubseção | `#3D7BC0` |
+| Cabeçalho corrente (nome na margem + nº de página) | `#1A4A85` |
+| Filete do cabeçalho | `#2A63A8` |
+| Sumário e links internos | `#1A4A85` |
+
+A **capa** é montada por `capa_tex()` em [`latex/build-tex.py`](latex/build-tex.py)
+a partir de [`apostila/indice.md`](apostila/indice.md): título em azul, **filete
+duplo** (2,4 pt + 0,6 pt) abrindo e fechando o bloco do título, um filete curto
+centralizado entre os professores e a instituição, e um filete duplo fechando a
+página. Os filetes usam `\hrule` — e não `\rule` — para não consumirem uma linha
+de texto inteira cada um.
 
 O capítulo usa a forma `display` ("CAPÍTULO N" em azul médio, título em azul
-profundo, filete de 1,2 pt); as seções levam filete de 0,7 pt. O esquema não vaza
-cor para o corpo do texto e a hierarquia continua legível em impressão preto e
-branco.
+profundo, filete de 1,2 pt); as seções levam filete de 0,7 pt.
+
+O **sumário** sai azul porque as entradas do sumário são os **únicos links
+internos** do documento (o corpo não usa `\ref`): o `hyperref` passou a usar
+`linkcolor` em vez de `hidelinks`, com `pdfborder={0 0 0}` para não desenhar
+moldura. Por isso as cores são definidas **antes** do `hyperref` no preâmbulo.
+
+O esquema não vaza cor para o corpo do texto e a hierarquia continua legível em
+impressão preto e branco.
 
 ---
 

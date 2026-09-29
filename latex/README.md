@@ -44,6 +44,21 @@ Saída: `apostila.pdf` (cópia de `build/apostila.pdf`).
   `display` ("CAPÍTULO N" em azul médio, título em azul profundo, filete de
   1,2 pt); as seções levam filete de 0,7 pt. O esquema **não** vaza cor para o
   corpo do texto e a hierarquia continua legível em impressão preto e branco.
+- **Capa**: gerada por `capa_tex()` em `build-tex.py` a partir de
+  `../apostila/indice.md`. Título em azul profundo e **filetes duplos**
+  (2,4 pt + 0,6 pt) abrindo e fechando o título e a página, mais um filete curto
+  centralizado entre os professores e a instituição. Os filetes usam `\hrule`
+  (não `\rule`) para não consumirem uma linha de texto inteira cada um — com
+  `\rule` o par de filetes abre ~14 pt de espaço em vez dos 2,4 pt pretendidos.
+- **Cabeçalho corrente**: nome do capítulo/seção e número de página em `azulSec`;
+  o filete é azul claro. O `\headrule` do `fancyhdr` é redefinido porque o
+  original é preto e não aceita cor.
+- **Sumário em azul**: as entradas do sumário são os **únicos links internos** do
+  documento (o corpo não usa `\ref`), então o `hyperref` passou a usar
+  `linkcolor=azulSec` + `pdfborder={0 0 0}` no lugar de `hidelinks`. Consequência:
+  as cores precisam ser definidas **antes** do `hyperref` no preâmbulo, e as
+  URLs do capítulo de referências também ficaram azuis.
+- **Ordem no preâmbulo**: `xcolor`/`\definecolor` → `hyperref` → `titlesec`.
 
 ## Correções editoriais no markdown
 

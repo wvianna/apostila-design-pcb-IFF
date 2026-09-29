@@ -112,7 +112,7 @@ Oito quadros, cada um **substituindo** o texto que estava em prosa ou resumindo 
 - **Não houve validação com o autor** do conteúdo técnico: o PDF compila e está estruturalmente correto, o que não equivale a conteúdo revisado.
 - O pipeline depende do markdown intermediário de `@firecrawl/anydoc` (`/tmp/apostila-src.md`), que precisa ser regerado antes de rodar `apostila/build-md.py`.
 - A origem de cada figura é o PDF da apostila, não o material original de terceiros. **As legendas das Figuras 1 e 2 deixaram de registrar o URL de origem** (§3, linha 4): o crédito precisa ser reposto na seção de referências, já que a apostila reutiliza imagens de terceiros.
-- O esquema de cores dos títulos (`titlesec`, §7.3) é uma escolha de apresentação: **não foi validado com o autor** e não altera conteúdo. Impressão em preto e branco mantém a hierarquia pelo tamanho e pelo peso das fontes.
+- O esquema de cores em azul (capa, títulos, cabeçalho corrente e sumário — §7.3) é uma escolha de apresentação: **não altera conteúdo** e foi **pedido explicitamente pelo autor** (duas rodadas: títulos/subtítulos e, depois, título do material + cabeçalhos + capa). Impressão em preto e branco mantém a hierarquia pelo tamanho e pelo peso das fontes.
 - O Capítulo 9 foi revisado apenas quanto à afirmação sobre o USB (§5), **não** integralmente contra `livros/Controlled Impedance Design Guide.pdf`.
 - Títulos de nível 4 que na origem são cabeçalhos de tabela aparecem como subtítulos sem número (A-04).
 
@@ -152,24 +152,43 @@ sai com 0,25 para todas, e as colunas estreitas ficam ilegíveis. Para a tabela 
 classes IPC, `|:---------|:-----------------------|:--------------------------------------------------------|`
 produz 0,11 / 0,26 / 0,63.
 
-## 7.3 Esquema de cores dos títulos
+## 7.3 Esquema de cores e elementos gráficos em azul
 
 `latex/apostila.tex` carrega `xcolor` + `titlesec` e define quatro tons de azul, do
 mais escuro no capítulo ao mais claro na subsubseção:
 
-| Nível | Cor | Hexadecimal |
+| Elemento | Cor | Hexadecimal |
 |---|---|---|
+| Capa: título | azul profundo | `#10305A` |
 | Capítulo | azul profundo | `#10305A` |
 | Seção | azul médio | `#1A4A85` |
 | Subseção | azul claro | `#2A63A8` |
 | Subsubseção | azul mais claro | `#3D7BC0` |
+| Cabeçalho corrente (nome na margem + nº de página) | azul médio | `#1A4A85` |
+| Filete do cabeçalho | azul claro | `#2A63A8` |
+| Sumário e links internos | azul médio | `#1A4A85` |
 
 O capítulo usa a forma `display`: rótulo "CAPÍTULO N" em azul médio, título em azul
 profundo e um filete de 1,2 pt. As seções levam filete de 0,7 pt.
 
+**Capa** (`capa_tex()` em `latex/build-tex.py`, a partir de `apostila/indice.md`):
+título em azul profundo, filete duplo (2,4 pt + 0,6 pt) abrindo e fechando o bloco
+do título, filete curto centralizado entre os professores e a instituição, e filete
+duplo fechando a página. Os filetes usam `\hrule` em vez de `\rule` para não
+consumirem uma linha de texto inteira cada um.
+
+**Cabeçalho corrente**: nome do capítulo/seção e número de página em azul médio,
+filete em azul claro — o `\headrule` do `fancyhdr` é redefinido porque o original é
+preto e não aceita cor.
+
+**Sumário em azul**: as entradas do sumário são os **únicos links internos** do
+documento (o corpo não usa `\ref`), então o `hyperref` trocou `hidelinks` por
+`linkcolor=azulSec` com `pdfborder={0 0 0}`. Isso obriga a definir as cores
+**antes** do `hyperref` no preâmbulo.
+
 Dois cuidados verificados: os quatro tons passam no contraste mínimo para texto
 grande sobre branco, e `titlesec` **não** vaza cor para o corpo — as legendas de
-figura continuam em preto.
+figura continuam em preto. O gate seguiu em 0 erros / 0 *Overfull* após a mudança.
 
 ## 7.4 Tabelas de capacidade do cap. 7 (reconstrução)
 

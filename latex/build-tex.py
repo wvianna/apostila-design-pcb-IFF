@@ -113,21 +113,51 @@ def capa_tex():
     profs = [l[2:].strip() for l in linhas if l.startswith('- ')]
     inst = next((l.lstrip('# ').strip() for l in linhas if 'Instituto' in l), '')
     data = next((l.strip() for l in linhas if re.match(r'^[a-zç]+/\d{4}$', l.strip())), '')
+    titulo_txt = ' '.join(titulo).replace('&', r'\&')
+    # Filete duplo (grosso + fino) em azul: abre e fecha o bloco do título.
+    # \hrule em vez de \rule para não consumir uma linha de texto inteira.
+    abre = [
+        '  {\\color{azulCap}\\hrule height 2.4pt}',
+        '  \\vspace{2.4pt}',
+        '  {\\color{azulSub}\\hrule height 0.6pt}',
+    ]
+    fecha = [
+        '  {\\color{azulSub}\\hrule height 0.6pt}',
+        '  \\vspace{2.4pt}',
+        '  {\\color{azulCap}\\hrule height 2.4pt}',
+    ]
     corpo = '\n'.join([
         '% Gerado por build-tex.py a partir de apostila/indice.md — não editar.',
+        '% Capa: título e filetes em azul, no mesmo esquema de cores das seções.',
         '\\begin{titlepage}',
         '  \\centering',
-        '  \\vspace*{3cm}',
-        '  {\\huge\\bfseries ' + ' '.join(titulo).replace('&', r'\&') + '\\par}',
-        '  \\vspace{2.5cm}',
+        '  \\vspace*{2.3cm}',
+        '',
+    ] + abre + [
+        '',
+        '  \\vspace{1.8cm}',
+        '  {\\color{azulCap}\\huge\\bfseries ' + titulo_txt + '\\par}',
+        '  \\vspace{1.3cm}',
+        '',
+    ] + fecha + [
+        '',
+        '  \\vfill',
+        '',
         '  {\\large Professores\\par}',
         '  \\vspace{0.5cm}',
     ] + ['  {\\large ' + p.replace('&', r'\&') + '\\par}' for p in profs] + [
+        '',
+        '  \\vspace{1.4cm}',
+        '  {\\color{azulSub}\\rule{0.42\\linewidth}{0.9pt}}',
+        '  \\vspace{1.4cm}',
+        '',
+        '  {\\Large\\scshape\\color{azulCap} ' + inst + '\\par}',
+        '  \\vspace{0.35cm}',
+        '  {\\large\\color{azulSec} ' + data + '\\par}',
+        '',
         '  \\vfill',
-        '  {\\Large\\scshape ' + inst + '\\par}',
-        '  \\vspace{0.4cm}',
-        '  {\\large ' + data + '\\par}',
-        '  \\vspace{1.5cm}',
+        '',
+    ] + fecha + [
         '\\end{titlepage}',
         '',
     ])
