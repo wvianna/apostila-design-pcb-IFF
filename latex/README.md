@@ -38,6 +38,29 @@ Saída: `apostila.pdf` (cópia de `build/apostila.pdf`).
 - **Figuras**: posicionadas com `[H]` (sem fila de floats) e limitadas a
   `max width=\linewidth`, `max height=0.82\textheight`.
 - **Referências WEB**: capítulo sem número, como no original.
+- **Cores dos títulos**: `xcolor` + `titlesec` definem quatro tons de azul, do mais
+  escuro no capítulo ao mais claro na subsubseção — capítulo `#10305A`, seção
+  `#1A4A85`, subseção `#2A63A8`, subsubseção `#3D7BC0`. O capítulo usa a forma
+  `display` ("CAPÍTULO N" em azul médio, título em azul profundo, filete de
+  1,2 pt); as seções levam filete de 0,7 pt. O esquema **não** vaza cor para o
+  corpo do texto e a hierarquia continua legível em impressão preto e branco.
+
+## Correções editoriais no markdown
+
+`../apostila/*.md` é a fonte de verdade, mas três defeitos herdados da conversão do
+PDF são corrigidos por script (todos idempotentes, em `../apostila/`):
+
+| Script | Defeito que corrige |
+|---|---|
+| `corrigir-legendas.py` | legenda que virou URL e o resíduo da URL quebrada em itálico; legendas duplicadas no cap. 9 |
+| `inserir-secao-ipc.py` | cria/atualiza a seção §2.3 (Normas IPC) |
+| `juntar-trechos-partidos.py` | frases partidas por fim de parágrafo falso e espaço depois de hífen (`curtos- circuitos`) |
+| `reconstruir-tabela-jlcpcb.py` | células desalinhadas nas tabelas de capacidade do cap. 7 |
+
+**A largura de uma coluna no pandoc vem do número de traços** na linha separadora
+da tabela em markdown. Quatro colunas com `|---|---|---|---|` saem com 0,25 cada,
+independentemente do conteúdo; para larguras proporcionais é preciso variar os
+traços (ex.: `|:---------|:-----------------------|:----------|` → 0,11 / 0,26 / 0,63).
 
 ## Quadros de destaque
 
@@ -58,8 +81,14 @@ juntador de parágrafos as absorveria e o quadro não seria gerado.
 
 ## Limitações conhecidas
 
-- **O build lê do disco.** Depois de editar `../apostila/*.md`, grave o arquivo
-  antes de rodar `./build-pdf.sh` — caso contrário o PDF sai com a versão anterior.
+- **O build lê do disco.** Grave os arquivos antes de rodar `./build-pdf.sh` — caso
+  contrário o PDF sai com a versão anterior.
+- **Grave os buffers ANTES de rodar os scripts, nunca depois.** Os scripts de
+  correção reescrevem `../apostila/*.md` direto no disco. Se um desses arquivos
+  estiver aberto no editor com um buffer defasado, um save posterior grava o buffer
+  por cima e **reverte o script sem aviso** — os scripts relatam sucesso, o build
+  passa 0/0 e o PDF não tem o conteúdo novo. Ordem correta: gravar → rodar os
+  scripts → compilar.
 - `apostila/build-md.py` é migração de uso único e **sobrescreve** os capítulos;
   não rodar depois de fazer correções editoriais à mão.
 - Os títulos de nível 4 que são, na origem, **cabeçalhos de tabela** ("Tecla de",

@@ -63,7 +63,7 @@
 | A-16 | caps. 2, 4, 5, 7, 8, 10 | **CORRIGIDO** | **7 frases partidas no meio** por um fim de parágrafo falso, herdado da quebra de linha do PDF | `apostila/juntar-trechos-partidos.py`; detectadas por varredura e fixadas uma a uma |
 | A-17 | caps. 2, 4, 7, 8 | **CORRIGIDO** | 4 termos com **espaço depois de hífen legítimo** (`curtos- circuitos`, `foto- resistente`, `add- on`, `espectrômetro- dosímetro`) e 1 par de palavras transpostas (`fp- info-cachearquivo`) | `apostila/juntar-trechos-partidos.py` |
 
-Os achados A-01 a A-15 foram **propostas** da fase de auditoria. O que já foi aplicado está marcado como **CORRIGIDO** na coluna «Evidência»: a revisão de conteúdo no §9, os quadros no §5.1 e a reconstrução das tabelas do cap. 7 no §7.1.
+Os achados A-01 a A-17 foram **propostas** da fase de auditoria. O que já foi aplicado está marcado como **CORRIGIDO** na coluna «Evidência»: a revisão de conteúdo no §9, os quadros no §5.1, a reconstrução das tabelas do cap. 7 no §7.4 e a seção IPC no §2.3.
 
 ## 5. Pendências `[VERIFICAR]` — resolvidas em 2026-09-29
 
@@ -71,7 +71,7 @@ Os achados A-01 a A-15 foram **propostas** da fase de auditoria. O que já foi a
 |---|---|---|
 | `06-opcoes-eda.md` — Eagle | **resolvido**: a Autodesk encerrou o EAGLE — deixou de ser vendido e suportado em 07/06/2026 | Autodesk, *Autodesk EAGLE is no longer available — Next steps and FAQ* |
 | `06-opcoes-eda.md` — PADS | **resolvido**: hoje é **Siemens PADS Professional** (o PADS era da Mentor Graphics) | Siemens, *PADS PCB design software* |
-| `07-kicad.md` §7.8 — tabela | **resolvido**: a atribuição **já existia** (JLCPCB, 11/2024) — o marcador era falso alarme. A **integridade** foi corrigida pela reconstrução das 6 subseções (§7.1), com a atribuição atualizada para 09/2026 | JLCPCB, *PCB Manufacturing & Assembly Capabilities* |
+| `07-kicad.md` §7.8 — tabela | **resolvido**: a atribuição **já existia** (JLCPCB, 11/2024) — o marcador era falso alarme. A **integridade** foi corrigida pela reconstrução das 6 subseções (§7.4), com a atribuição atualizada para 09/2026 | JLCPCB, *PCB Manufacturing & Assembly Capabilities* |
 | `09-controle-impedancia.md` — USB | **corrigido**: o USB 2.0 exige **90 Ω ±15%**; o ±10% que o texto citava é a **tolerância de fabricação** da impedância controlada, não o requisito da interface | Texas Instruments, *USB layout basics*; JLCPCB (impedance tolerance ±10%) |
 | `apostila/indice-figuras.md` — Figuras 1 e 2 | **resolvido**: no documento original a legenda era a própria URL. O autor definiu "Exemplos de PCBs" e "Exemplos de serigrafias" em 2026-09-29 | decisão editorial do autor |
 
@@ -108,7 +108,7 @@ Oito quadros, cada um **substituindo** o texto que estava em prosa ou resumindo 
 ## 6. Limitações e riscos residuais
 
 - A auditoria é **dirigida por varredura automatizada**; não é leitura integral das 98 páginas. Achados de conteúdo técnico não capturáveis por padrão (afirmação incorreta sem valor numérico) podem existir.
-- ~~A tabela de capacidades do cap. 7 exige revisão manual~~ → **resolvida** (§7.1). Registre-se a natureza da correção: as células foram **transcritas da página do fabricante**, não recuperadas do PDF de origem — o texto da apostila é, nessas 6 subseções, uma paráfrase em pt-BR da fonte, e não o texto do autor. Como os valores mudam, **exigem confirmação do autor** antes de uso em aula.
+- ~~A tabela de capacidades do cap. 7 exige revisão manual~~ → **resolvida** (§7.4). Registre-se a natureza da correção: as células foram **transcritas da página do fabricante**, não recuperadas do PDF de origem — o texto da apostila é, nessas 6 subseções, uma paráfrase em pt-BR da fonte, e não o texto do autor. Como os valores mudam, **exigem confirmação do autor** antes de uso em aula.
 - **Não houve validação com o autor** do conteúdo técnico: o PDF compila e está estruturalmente correto, o que não equivale a conteúdo revisado.
 - O pipeline depende do markdown intermediário de `@firecrawl/anydoc` (`/tmp/apostila-src.md`), que precisa ser regerado antes de rodar `apostila/build-md.py`.
 - A origem de cada figura é o PDF da apostila, não o material original de terceiros. **As legendas das Figuras 1 e 2 deixaram de registrar o URL de origem** (§3, linha 4): o crédito precisa ser reposto na seção de referências, já que a apostila reutiliza imagens de terceiros.
@@ -134,9 +134,15 @@ reescrevem os arquivos direto no disco e um buffer defasado do editor, ao ser gr
 depois, **reverte** o trabalho do script sem aviso — foi o que apagou as legendas 1 e 2
 entre duas compilações.
 
+## 7.1 Scripts de correção editorial
+
+| Script | O que faz |
+|---|---|
 | `apostila/corrigir-legendas.py` | Legenda das Figuras 1 e 2 (a legenda era a URL de origem) + limpeza do resíduo de URL quebrada em itálico; no cap. 9, remove a legenda duplicada da Figura 68 e a cópia extra da Figura 67. No manifesto `indice-figuras.md`, atualiza as legendas 1 e 2. |
 | `apostila/inserir-secao-ipc.py` | Cria o §2.3 (Normas IPC) a partir do texto de `livros/IPC Class 3 Design Guide.pdf`. Só afirma o que essa fonte declara. Atualiza a tabela das classes para 3 colunas se encontrar a versão antiga de 4. |
 | `apostila/juntar-trechos-partidos.py` | Rejunta frases partidas por fim de parágrafo falso (A-16) e remove espaço depois de hífen legítimo (A-17). Os casos estão fixados um a um; os modos são **explícitos** nas listas, porque inferir o modo pela pontuação duplicou frases numa versão anterior. |
+
+## 7.2 Formatação de tabelas
 
 ### Contagem de traços define a largura da coluna
 
@@ -185,17 +191,16 @@ camada externa (era 1/2 oz, agora 1 a 4,5 oz em 2 camadas).
 
 ## 8. Próximo passo sugerido
 
-**Concluído**: §5 (todas as pendências `[VERIFICAR]`), §5.1 (quadros de destaque),
-§7.1 (tabelas de capacidade do cap. 7), A-05, A-14, A-15 e as correções de conteúdo
-do cap. 3 (§9.2).
+**Concluído**: §2.3 (seção IPC — A-11), §5 (todas as pendências `[VERIFICAR]`), §5.1 (8 quadros), §7.4 (tabelas do cap. 7), A-05, A-11, A-14, A-15, A-16, A-17, a troca das legendas 1 e 2 e as correções de conteúdo do cap. 3 (§9.2).
 
 **Pendente**:
 
-1. Aplicar as correções mecânicas restantes: A-02, A-03, A-09, A-12.
+1. Aplicar as correções mecânicas restantes: A-02 (bullet `•` solto), A-03 (termos em inglês sem tradução), A-09 (URLs partidas e tags `<u>`), A-12 (artefatos de conversão no cap. 9).
 2. Reconstruir as tabelas de atalho do cap. 7 (§7.7), cujos cabeçalhos continuam como subtítulos sem número (A-04).
 3. Atualizar a lista de ferramentas EDA do cap. 6 e as Referências WEB (A-07, A-08).
 4. Criar a seção de Apresentação em `apostila/indice.md` (A-13).
-5. A-10 (Figura 68 encoberta) e A-11 (ausência de menção a IPC) dependem de decisão editorial — a primeira reproduz um defeito do próprio PDF de origem.
+5. Repor o crédito das Figuras 1 e 2 na seção de referências — a troca da legenda removeu o URL que fazia as vezes de crédito (§6).
+6. A-06 (tolerância do USB) e A-10 (Figura 68 encoberta) dependem de decisão editorial — a segunda reproduz um defeito do próprio PDF de origem.
 
 ## 9. Revisão técnica (correções de conteúdo aplicadas)
 
